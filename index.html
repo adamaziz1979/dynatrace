@@ -128,10 +128,15 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{background:#f0edff;t
 
 
 .scope-matrix-wrap{overflow-x:auto;margin-top:10px}
-.scope-matrix{min-width:1120px;font-size:12px;table-layout:fixed}
+.scope-matrix{min-width:1000px;font-size:12px;table-layout:fixed}
 .scope-matrix th,.scope-matrix td{vertical-align:middle}
 .scope-matrix th.scope-map-col,.scope-matrix td.scope-map-col{width:142px;padding:6px}
-.scope-matrix th.scope-lead-col{width:230px}
+.scope-matrix th.scope-lead-col{width:190px}
+.scope-matrix th:nth-child(3){width:90px}
+.scope-matrix th:nth-child(4){width:80px}
+.scope-matrix th:nth-child(5){width:85px}
+.scope-matrix th:nth-child(6){width:75px}
+.scope-matrix th:nth-child(n+3):nth-child(-n+6),.scope-matrix td:nth-child(n+3):nth-child(-n+6){padding:8px 6px;text-align:center}
 .scope-map{width:128px;height:78px;display:block;margin:auto;background:transparent}
 .scope-map .scope-country{fill:#8f4dff;fill-opacity:.72;stroke:none}
 .scope-map .scope-mgr-ring{fill:#fff;stroke:#22c7e8;stroke-width:2}
@@ -145,7 +150,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{background:#f0edff;t
 </style></head><body>
 <header class="hero"><div class="wrap">
 <div class="report-meta">
-  <span>Working report · v0.44 · 26-Sep-2026</span>
+  <span>Working report · v0.45 · 26-Sep-2026</span>
   <a href="https://www.dynatrace.com/" target="_blank" rel="noopener">Dynatrace | Observability built for the age of AI</a>
 </div>
 <h1>Dynatrace APAC Business Insights Growth Strategy</h1>
@@ -494,7 +499,7 @@ Dynatrace APAC BI Team Manager Practical (provided case study) ·
 <!-- Mini-map geometry: Natural Earth 1:50m, public domain. Embedded for offline display. North Asia TBD marker is a key, not an assigned location. -->
 <div class="scope-matrix-wrap"><table class="scope-matrix">
 <thead><tr>
-<th class="scope-map-col">Focus map</th>
+<th class="scope-map-col" aria-label="Countries in scope"></th>
 <th class="scope-lead-col">Leadership scope</th>
 <th>Cultural / business fit<br><small>1–5</small></th>
 <th>Language fit<br><small>1–5</small></th>
@@ -801,3 +806,4 @@ if(apjcMapEl){
 }
 
 </script></body></html>
+
