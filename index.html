@@ -42,6 +42,8 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{background:#f0edff;t
 .refs-small a:hover{text-decoration:underline}
 
 
+
+
 .region-matrix-cell{
   vertical-align:top;
   background:#f3efff;
@@ -50,6 +52,16 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{background:#f0edff;t
   border-right:1px solid #d9d0f3;
   white-space:nowrap;
 }
+
+.region-group td{
+  background:#f3efff;
+  color:#2f1b64;
+  font-weight:800;
+  border-top:2px solid #d9d0f3;
+  border-bottom:1px solid #d9d0f3;
+  padding:6px 9px;
+}
+
 .apjc-divider td{
   padding:5px 10px;
   background:#faf9fd;
@@ -107,10 +119,20 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{background:#f0edff;t
 .map-diamond{width:10px;height:10px;display:inline-block;transform:rotate(45deg);background:var(--cyan);border:1px solid #24124e}
 .map-star{font-size:14px;color:var(--purple);line-height:1}
 .map-note{padding:0 16px 14px;color:var(--muted);font-size:10.5px;line-height:1.35}
-@media(max-width:900px){.report-meta{align-items:flex-start;flex-direction:column;gap:4px}#base .cards{grid-template-columns:repeat(2,1fr)}.apjc-map-grid{grid-template-columns:1fr}.map-side{border-left:0;border-top:1px solid var(--line)}#apjcMap{height:520px}}
+@media(max-width:900px){
+  .report-meta{align-items:flex-start;flex-direction:column;gap:4px}
+  #base .cards{grid-template-columns:repeat(2,1fr)}
+  .apjc-map-grid{grid-template-columns:1fr}
+  .map-side{border-left:0;border-top:1px solid var(--line)}
+  #apjcMap{height:520px}
+}
 
 </style></head><body>
-<header class="hero"><div class="wrap"><div class="report-meta"><span>Working report · v0.20 · 26-Sep-2026</span><a href="https://www.dynatrace.com/" target="_blank" rel="noopener">Dynatrace | Observability built for the age of AI</a></div>
+<header class="hero"><div class="wrap">
+<div class="report-meta">
+  <span>Working report · v0.20 · 26-Sep-2026</span>
+  <a href="https://www.dynatrace.com/" target="_blank" rel="noopener">Dynatrace | Observability built for the age of AI</a>
+</div>
 <h1>Dynatrace APAC Business Insights Growth Strategy</h1>
 <p>Case-study facts, publicly disclosed customer base, a three-tier Insights prospect model, and an ANZ-led growth hypothesis.</p>
 <div class="notice"><b>Important limitation:</b> Dynatrace does not publish its full CRM customer list or each customer's Business Insights subscription status. This report uses publicly disclosed/referenced customers only. Tiering is an external business-development hypothesis to validate against internal DEM/RUM usage, account plans, contract data and pipeline.</div></div></header>
@@ -190,8 +212,8 @@ Dynatrace APAC BI Team Manager Practical (provided case study) ·
     <div class="region-note">Banking, wagering, entertainment, utilities and government digital services.</div>
   </div>
   <div class="region-wrap">
-    <div class="region-row"><div class="region-name">ASEAN + South Korea</div><div class="region-track" style="width:71.429%"><div class="seg t1s" style="width:80%">T1 4</div><div class="seg t2s" style="width:20%">T2 1</div></div><div class="region-count">5</div></div>
-    <div class="region-note">Singapore is the current resource base; public customer examples span Singapore, Malaysia, Thailand, the Philippines and South Korea.</div>
+    <div class="region-row"><div class="region-name">ASEAN + South Korea</div><div class="region-track" style="width:57.143%"><div class="seg t1s" style="width:75%">T1 3</div><div class="seg t2s" style="width:25%">T2 1</div></div><div class="region-count">4</div></div>
+    <div class="region-note">Malaysia, Thailand and the Philippines dominate the public ASEAN + South Korea examples, with regional securities exposure including a Seoul office in South Korea.</div>
   </div>
   <div class="region-wrap">
     <div class="region-row"><div class="region-name">Japan</div><div class="region-track" style="width:57.143%"><div class="seg t1s" style="width:50%">T1 2</div><div class="seg t3s" style="width:50%">T3 2</div></div><div class="region-count">4</div></div>
@@ -201,7 +223,10 @@ Dynatrace APAC BI Team Manager Practical (provided case study) ·
     <div class="region-row"><div class="region-name">India</div><div class="region-track" style="width:28.571%"><div class="seg t1s" style="width:100%">T1 2</div></div><div class="region-count">2</div></div>
     <div class="region-note">Financial services and insurance.</div>
   </div>
-
+  <div class="region-wrap">
+    <div class="region-row"><div class="region-name">Singapore</div><div class="region-track" style="width:14.286%"><div class="seg t1s" style="width:100%">T1 1</div></div><div class="region-count">1</div></div>
+    <div class="region-note">Healthcare technology and public health IT.</div>
+  </div>
 </div>
 <div class="warn" style="margin-top:12px"><b>Interpretation:</b> the public sample is strongest in the UK and ANZ. India has a very small publicly visible account sample, while ASEAN + South Korea now combines the Singapore resource base with customer examples across four additional markets. Neither should be read as proof of broad market maturity. Japan is distinctive: the public set splits between two strong digital/RUM-led prospects and two large enterprise accounts whose current public Dynatrace stories are predominantly operational.</div>
 
@@ -385,6 +410,7 @@ Dynatrace APAC BI Team Manager Practical (provided case study) ·
 <script>
 const rows=[...document.querySelectorAll('#tbl tbody tr[data-r]')],divider=document.querySelector('#tbl tbody tr.apjc-divider'),rf=document.getElementById('rf'),tf=document.getElementById('tf'),q=document.getElementById('q');
 const regions=[...new Set(rows.map(x=>x.dataset.r))];
+
 function rebuildRegionCells(){
   document.querySelectorAll('#tbl tbody td.region-matrix-cell').forEach(c=>c.remove());
   regions.forEach(region=>{
@@ -398,6 +424,7 @@ function rebuildRegionCells(){
     visible[0].insertBefore(cell,visible[0].firstChild);
   });
 }
+
 function f(){
   const r=rf.value.toLowerCase(),t=tf.value.toLowerCase(),s=q.value.toLowerCase();
   rows.forEach(x=>{
@@ -413,30 +440,93 @@ function f(){
 }
 rf.onchange=tf.onchange=q.oninput=f;
 
-const APJC_CUSTOMERS=[{"name":"Village Roadshow","region":"ANZ","country":"Australia","city":"Melbourne","lat":-37.8136,"lon":144.9631,"tier":"T1","scale":"Medium","size":22,"dem":"High","bi":"High","signal":"Digital ticketing; ~$5m revenue protected."},{"name":"Macquarie Bank","region":"ANZ","country":"Australia","city":"Sydney","lat":-33.8688,"lon":151.2093,"tier":"T1","scale":"Large","size":28,"dem":"Very high","bi":"Very high","signal":"2.2m customers; critical digital banking journeys."},{"name":"BNZ","region":"ANZ","country":"New Zealand","city":"Auckland","lat":-36.8485,"lon":174.7633,"tier":"T1","scale":"Large","size":27,"dem":"Very high","bi":"Very high","signal":"1.2m customers; 85 apps; 2,500+ services."},{"name":"RWWA","region":"ANZ","country":"Australia","city":"Perth","lat":-31.9523,"lon":115.8613,"tier":"T1","scale":"Medium","size":23,"dem":"Very high","bi":"High","signal":"Real-time wagering and transaction-sensitive customer journeys."},{"name":"Horizon Power","region":"ANZ","country":"Australia","city":"Perth","lat":-31.63,"lon":116.15,"tier":"T2","scale":"Medium","size":20,"dem":"Medium","bi":"Medium","signal":"Strong service outcomes; less direct digital-commerce evidence."},{"name":"IP Australia","region":"ANZ","country":"Australia","city":"Canberra","lat":-35.2809,"lon":149.13,"tier":"T2","scale":"Medium","size":22,"dem":"High","bi":"Medium","signal":"~800k online transactions/year; 99% digital service delivery."},{"name":"Shriram Capital","region":"India","country":"India","city":"Chennai","lat":13.0827,"lon":80.2707,"tier":"T1","scale":"Large","size":28,"dem":"High","bi":"High","signal":"Large regulated financial-services footprint."},{"name":"Bajaj Allianz Life Insurance","region":"India","country":"India","city":"Pune","lat":18.5204,"lon":73.8567,"tier":"T1","scale":"Large","size":28,"dem":"High","bi":"High","signal":"High-volume regulated customer journeys."},{"name":"Synapxe / IHiS","region":"ASEAN + South Korea","country":"Singapore","city":"Singapore","lat":1.3521,"lon":103.8198,"tier":"T1","scale":"Large","size":28,"dem":"High","bi":"High","signal":"570 backend apps; up to 80k vaccinations/day."},{"name":"CIMB Bank","region":"ASEAN + South Korea","country":"Malaysia","city":"Kuala Lumpur","lat":3.139,"lon":101.6869,"tier":"T1","scale":"Very large","size":36,"dem":"Very high","bi":"Very high","signal":"30m+ customers; hundreds of millions of interactions."},{"name":"KBTG / KBank","region":"ASEAN + South Korea","country":"Thailand","city":"Bangkok","lat":13.7563,"lon":100.5018,"tier":"T1","scale":"Very large","size":35,"dem":"Very high","bi":"Very high","signal":"23m+ customers; 400+ apps."},{"name":"PayMaya","region":"ASEAN + South Korea","country":"Philippines","city":"Manila","lat":14.5995,"lon":120.9842,"tier":"T1","scale":"Large","size":29,"dem":"Very high","bi":"High","signal":"Digital wallet and mobile-payment journeys."},{"name":"Mizuho Securities Asia","region":"ASEAN + South Korea","country":"South Korea","city":"Seoul","lat":37.5665,"lon":126.978,"tier":"T2","scale":"Large","size":26,"dem":"Medium","bi":"Medium","signal":"Regional securities account; Seoul presence."},{"name":"Globeride","region":"Japan","country":"Japan","city":"Tokyo","lat":35.71,"lon":139.78,"tier":"T1","scale":"Medium","size":22,"dem":"Very high","bi":"High","signal":"Explicit RUM/UX health dashboards and e-commerce."},{"name":"DeNA","region":"Japan","country":"Japan","city":"Tokyo","lat":35.66,"lon":139.7,"tier":"T1","scale":"Large","size":29,"dem":"Very high","bi":"High","signal":"Digital-native games, streaming, sports and healthcare portfolio."},{"name":"Fujitsu","region":"Japan","country":"Japan","city":"Kawasaki","lat":35.5308,"lon":139.7029,"tier":"T3","scale":"Very large","size":36,"dem":"Medium","bi":"Low–Medium","signal":"Very large enterprise; public Dynatrace use is mainly internal operations."},{"name":"DNP Group","region":"Japan","country":"Japan","city":"Tokyo","lat":35.69,"lon":139.76,"tier":"T3","scale":"Very large","size":34,"dem":"Medium","bi":"Low–Medium","signal":"Large diversified enterprise; current public story is operations-led."}];
-const APJC_RESOURCES=[{"city":"Sydney","lat":-33.8688,"lon":151.2093,"n":4,"role":"Manager + Sr Analyst + 2× Sr Support","leadership":true,"region":"ANZ"},{"city":"Melbourne","lat":-37.8136,"lon":144.9631,"n":1,"role":"Analyst","leadership":false,"region":"ANZ"},{"city":"Singapore","lat":1.3521,"lon":103.8198,"n":3,"role":"2× Sr Analyst + Analyst; no local Manager","leadership":false,"region":"ASEAN + South Korea"},{"city":"Delhi","lat":28.6139,"lon":77.209,"n":1,"role":"Lead Support","leadership":false,"region":"India"},{"city":"Mumbai","lat":19.076,"lon":72.8777,"n":1,"role":"Sr Analyst","leadership":false,"region":"India"}];
+const APJC_CUSTOMERS=[{"name": "Village Roadshow", "region": "ANZ", "country": "Australia", "city": "Melbourne", "lat": -37.8136, "lon": 144.9631, "tier": "T1", "scale": "Medium", "size": 22, "dem": "High", "bi": "High", "signal": "Digital ticketing; ~$5m revenue protected."}, {"name": "Macquarie Bank", "region": "ANZ", "country": "Australia", "city": "Sydney", "lat": -33.8688, "lon": 151.2093, "tier": "T1", "scale": "Large", "size": 28, "dem": "Very high", "bi": "Very high", "signal": "2.2m customers; critical digital banking journeys."}, {"name": "BNZ", "region": "ANZ", "country": "New Zealand", "city": "Auckland", "lat": -36.8485, "lon": 174.7633, "tier": "T1", "scale": "Large", "size": 27, "dem": "Very high", "bi": "Very high", "signal": "1.2m customers; 85 apps; 2,500+ services."}, {"name": "RWWA", "region": "ANZ", "country": "Australia", "city": "Perth", "lat": -31.9523, "lon": 115.8613, "tier": "T1", "scale": "Medium", "size": 23, "dem": "Very high", "bi": "High", "signal": "Real-time wagering and transaction-sensitive customer journeys."}, {"name": "Horizon Power", "region": "ANZ", "country": "Australia", "city": "Perth", "lat": -31.63, "lon": 116.15, "tier": "T2", "scale": "Medium", "size": 20, "dem": "Medium", "bi": "Medium", "signal": "Strong service outcomes; less direct digital-commerce evidence."}, {"name": "IP Australia", "region": "ANZ", "country": "Australia", "city": "Canberra", "lat": -35.2809, "lon": 149.13, "tier": "T2", "scale": "Medium", "size": 22, "dem": "High", "bi": "Medium", "signal": "~800k online transactions/year; 99% digital service delivery."}, {"name": "Shriram Capital", "region": "India", "country": "India", "city": "Chennai", "lat": 13.0827, "lon": 80.2707, "tier": "T1", "scale": "Large", "size": 28, "dem": "High", "bi": "High", "signal": "Large regulated financial-services footprint."}, {"name": "Bajaj Allianz Life Insurance", "region": "India", "country": "India", "city": "Pune", "lat": 18.5204, "lon": 73.8567, "tier": "T1", "scale": "Large", "size": 28, "dem": "High", "bi": "High", "signal": "High-volume regulated customer journeys."}, {"name": "Synapxe / IHiS", "region": "ASEAN + South Korea", "country": "Singapore", "city": "Singapore", "lat": 1.3521, "lon": 103.8198, "tier": "T1", "scale": "Large", "size": 28, "dem": "High", "bi": "High", "signal": "570 backend apps; up to 80k vaccinations/day."}, {"name": "CIMB Bank", "region": "ASEAN + South Korea", "country": "Malaysia", "city": "Kuala Lumpur", "lat": 3.139, "lon": 101.6869, "tier": "T1", "scale": "Very large", "size": 36, "dem": "Very high", "bi": "Very high", "signal": "30m+ customers; hundreds of millions of interactions."}, {"name": "KBTG / KBank", "region": "ASEAN + South Korea", "country": "Thailand", "city": "Bangkok", "lat": 13.7563, "lon": 100.5018, "tier": "T1", "scale": "Very large", "size": 35, "dem": "Very high", "bi": "Very high", "signal": "23m+ customers; 400+ apps."}, {"name": "PayMaya", "region": "ASEAN + South Korea", "country": "Philippines", "city": "Manila", "lat": 14.5995, "lon": 120.9842, "tier": "T1", "scale": "Large", "size": 29, "dem": "Very high", "bi": "High", "signal": "Digital wallet and mobile-payment journeys."}, {"name": "Mizuho Securities Asia", "region": "ASEAN + South Korea", "country": "South Korea", "city": "Seoul", "lat": 37.5665, "lon": 126.978, "tier": "T2", "scale": "Large", "size": 26, "dem": "Medium", "bi": "Medium", "signal": "Regional securities account; Seoul presence."}, {"name": "Globeride", "region": "Japan", "country": "Japan", "city": "Tokyo", "lat": 35.71, "lon": 139.78, "tier": "T1", "scale": "Medium", "size": 22, "dem": "Very high", "bi": "High", "signal": "Explicit RUM/UX health dashboards and e-commerce."}, {"name": "DeNA", "region": "Japan", "country": "Japan", "city": "Tokyo", "lat": 35.66, "lon": 139.7, "tier": "T1", "scale": "Large", "size": 29, "dem": "Very high", "bi": "High", "signal": "Digital-native games, streaming, sports and healthcare portfolio."}, {"name": "Fujitsu", "region": "Japan", "country": "Japan", "city": "Kawasaki", "lat": 35.5308, "lon": 139.7029, "tier": "T3", "scale": "Very large", "size": 36, "dem": "Medium", "bi": "Low–Medium", "signal": "Very large enterprise; public Dynatrace use is mainly internal operations."}, {"name": "DNP Group", "region": "Japan", "country": "Japan", "city": "Tokyo", "lat": 35.69, "lon": 139.76, "tier": "T3", "scale": "Very large", "size": 34, "dem": "Medium", "bi": "Low–Medium", "signal": "Large diversified enterprise; current public story is operations-led."}];
+const APJC_RESOURCES=[{"city": "Sydney", "lat": -33.8688, "lon": 151.2093, "n": 4, "role": "Manager + Sr Analyst + 2× Sr Support", "leadership": true, "region": "ANZ"}, {"city": "Melbourne", "lat": -37.8136, "lon": 144.9631, "n": 1, "role": "Analyst", "leadership": false, "region": "ANZ"}, {"city": "Singapore", "lat": 1.3521, "lon": 103.8198, "n": 3, "role": "2× Sr Analyst + Analyst; no local Manager", "leadership": false, "region": "ASEAN + South Korea"}, {"city": "Delhi", "lat": 28.6139, "lon": 77.209, "n": 1, "role": "Lead Support", "leadership": false, "region": "India"}, {"city": "Mumbai", "lat": 19.076, "lon": 72.8777, "n": 1, "role": "Sr Analyst", "leadership": false, "region": "India"}];
+
 function buildApjcMap(){
   if(typeof Plotly==='undefined') return;
   const tierColours={T1:'#b6f23a',T2:'#8f4dff',T3:'#a6a1b3'};
   const traces=['T1','T2','T3'].map(tier=>{
     const d=APJC_CUSTOMERS.filter(x=>x.tier===tier);
-    return {type:'scattergeo',mode:'markers',name:tier+' customers',lat:d.map(x=>x.lat),lon:d.map(x=>x.lon),
-      text:d.map(x=>'<b>'+x.name+'</b><br>'+x.city+', '+x.country+'<br>Region: '+x.region+'<br>Tier: '+x.tier+'<br>Business scale: '+x.scale+'<br>DEM/RUM fit: '+x.dem+'<br>Business Insights fit: '+x.bi+'<br>'+x.signal),
+    return {
+      type:'scattergeo',
+      mode:'markers',
+      name:tier+' customers',
+      lat:d.map(x=>x.lat),
+      lon:d.map(x=>x.lon),
+      text:d.map(x=>`<b>${x.name}</b><br>${x.city}, ${x.country}<br>Region: ${x.region}<br>Tier: ${x.tier}<br>Business scale: ${x.scale}<br>DEM/RUM fit: ${x.dem}<br>Business Insights fit: ${x.bi}<br>${x.signal}`),
       hovertemplate:'%{text}<extra></extra>',
-      marker:{size:d.map(x=>x.size),color:tierColours[tier],opacity:.80,line:{color:'#24124e',width:1.2}}};
+      marker:{
+        size:d.map(x=>x.size),
+        color:tierColours[tier],
+        opacity:.80,
+        line:{color:'#24124e',width:1.2}
+      }
+    };
   });
+
   const delivery=APJC_RESOURCES.filter(x=>!x.leadership);
-  traces.push({type:'scattergeo',mode:'markers',name:'Delivery resources',lat:delivery.map(x=>x.lat),lon:delivery.map(x=>x.lon),
-    text:delivery.map(x=>'<b>'+x.city+' resource hub</b><br>'+x.region+'<br>'+x.n+' resource'+(x.n===1?'':'s')+'<br>'+x.role),
-    hovertemplate:'%{text}<extra></extra>',marker:{symbol:'diamond',size:delivery.map(x=>14+x.n*5),color:'#22c7e8',opacity:.95,line:{color:'#24124e',width:2}}});
+  traces.push({
+    type:'scattergeo',
+    mode:'markers',
+    name:'Delivery resources',
+    lat:delivery.map(x=>x.lat),
+    lon:delivery.map(x=>x.lon),
+    text:delivery.map(x=>`<b>${x.city} resource hub</b><br>${x.region}<br>${x.n} resource${x.n===1?'':'s'}<br>${x.role}`),
+    hovertemplate:'%{text}<extra></extra>',
+    marker:{
+      symbol:'diamond',
+      size:delivery.map(x=>14+x.n*5),
+      color:'#22c7e8',
+      opacity:.95,
+      line:{color:'#24124e',width:2}
+    }
+  });
+
   const leaders=APJC_RESOURCES.filter(x=>x.leadership);
-  traces.push({type:'scattergeo',mode:'markers+text',name:'Local market leadership',lat:leaders.map(x=>x.lat),lon:leaders.map(x=>x.lon),text:leaders.map(x=>'★'),
-    textfont:{size:17,color:'#6b3df4'},textposition:'top center',
-    hovertext:leaders.map(x=>'<b>'+x.city+' leadership + delivery hub</b><br>'+x.region+'<br>'+x.n+' resources<br>'+x.role),
-    hovertemplate:'%{hovertext}<extra></extra>',marker:{symbol:'diamond',size:leaders.map(x=>15+x.n*5),color:'#22c7e8',opacity:.98,line:{color:'#6b3df4',width:3}}});
-  const layout={margin:{l:0,r:0,t:0,b:0},paper_bgcolor:'#fbfaff',plot_bgcolor:'#fbfaff',showlegend:false,
+  traces.push({
+    type:'scattergeo',
+    mode:'markers+text',
+    name:'Local market leadership',
+    lat:leaders.map(x=>x.lat),
+    lon:leaders.map(x=>x.lon),
+    text:leaders.map(x=>'★'),
+    textfont:{size:17,color:'#6b3df4'},
+    textposition:'top center',
+    hovertext:leaders.map(x=>`<b>${x.city} leadership + delivery hub</b><br>${x.region}<br>${x.n} resources<br>${x.role}`),
+    hovertemplate:'%{hovertext}<extra></extra>',
+    marker:{
+      symbol:'diamond',
+      size:leaders.map(x=>15+x.n*5),
+      color:'#22c7e8',
+      opacity:.98,
+      line:{color:'#6b3df4',width:3}
+    }
+  });
+
+  const layout={
+    margin:{l:0,r:0,t:0,b:0},
+    paper_bgcolor:'#fbfaff',
+    plot_bgcolor:'#fbfaff',
+    showlegend:false,
     hoverlabel:{bgcolor:'#17112f',font:{color:'#ffffff',size:12}},
-    geo:{scope:'world',projection:{type:'natural earth'},showframe:false,showcoastlines:true,coastlinecolor:'#bcb5d0',showland:true,landcolor:'#eeeaf6',showocean:true,oceancolor:'#fbfaff',showcountries:true,countrycolor:'#d6d0e7',lonaxis:{range:[65,180]},lataxis:{range:[-48,48]},bgcolor:'#fbfaff'}};
+    geo:{
+      scope:'world',
+      projection:{type:'natural earth'},
+      showframe:false,
+      showcoastlines:true,
+      coastlinecolor:'#bcb5d0',
+      showland:true,
+      landcolor:'#eeeaf6',
+      showocean:true,
+      oceancolor:'#fbfaff',
+      showcountries:true,
+      countrycolor:'#d6d0e7',
+      lonaxis:{range:[65,180]},
+      lataxis:{range:[-48,48]},
+      bgcolor:'#fbfaff'
+    }
+  };
   Plotly.newPlot('apjcMap',traces,layout,{responsive:true,displayModeBar:false});
 }
 buildApjcMap();
