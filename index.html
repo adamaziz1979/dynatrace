@@ -129,7 +129,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{background:#f0edff;t
 </style></head><body>
 <header class="hero"><div class="wrap">
 <div class="report-meta">
-  <span>Working report · v0.26 · 26-Sep-2026</span>
+  <span>Working report · v0.27 · 26-Sep-2026</span>
   <a href="https://www.dynatrace.com/" target="_blank" rel="noopener">Dynatrace | Observability built for the age of AI</a>
 </div>
 <h1>Dynatrace APAC Business Insights Growth Strategy</h1>
@@ -447,19 +447,21 @@ function buildApjcMap(){
   if(typeof Plotly==='undefined') return;
   const tierColours={T1:'#b6f23a',T2:'#8f4dff',T3:'#a6a1b3'};
   const delivery=[...APJC_RESOURCES];
+  const singaporeHub=delivery.filter(x=>x.city==='Singapore');
+  const otherDelivery=delivery.filter(x=>x.city!=='Singapore');
 
-  // Draw delivery hubs first so customer bubbles are rendered above them.
+  // Draw most delivery hubs first so customer bubbles remain visible above them.
   const traces=[{
     type:'scattergeo',
     mode:'markers',
     name:'Delivery resources',
-    lat:delivery.map(x=>x.lat),
-    lon:delivery.map(x=>x.lon),
-    text:delivery.map(x=>`<b>${x.city} resource hub</b><br>${x.region}<br>${x.n} resource${x.n===1?'':'s'}<br>${x.role}`),
+    lat:otherDelivery.map(x=>x.lat),
+    lon:otherDelivery.map(x=>x.lon),
+    text:otherDelivery.map(x=>`<b>${x.city} resource hub</b><br>${x.region}<br>${x.n} resource${x.n===1?'':'s'}<br>${x.role}`),
     hovertemplate:'%{text}<extra></extra>',
     marker:{
       symbol:'diamond',
-      size:delivery.map(x=>14+x.n*4),
+      size:otherDelivery.map(x=>14+x.n*4),
       color:'#22c7e8',
       opacity:.78,
       line:{width:0}
@@ -480,6 +482,24 @@ function buildApjcMap(){
       size:d.map(x=>x.size),
       color:d.map(x=>tierColours[x.tier]),
       opacity:.84,
+      line:{width:0}
+    }
+  });
+
+  // Singapore is the ASEAN + South Korea resource base, so keep its hub marker in front.
+  traces.push({
+    type:'scattergeo',
+    mode:'markers',
+    name:'Singapore resource hub',
+    lat:singaporeHub.map(x=>x.lat),
+    lon:singaporeHub.map(x=>x.lon),
+    text:singaporeHub.map(x=>`<b>${x.city} resource hub</b><br>${x.region}<br>${x.n} resources<br>${x.role}`),
+    hovertemplate:'%{text}<extra></extra>',
+    marker:{
+      symbol:'diamond',
+      size:singaporeHub.map(x=>14+x.n*4),
+      color:'#22c7e8',
+      opacity:.95,
       line:{width:0}
     }
   });
