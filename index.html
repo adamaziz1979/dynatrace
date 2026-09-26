@@ -1,365 +1,161 @@
-<!DOCTYPE html>
-<html lang="en-AU">
-<head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Dynatrace – Manager, Data Analytics APAC | Stage 1 Executive Briefing</title>
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>Dynatrace APAC Business Insights Growth Strategy</title>
 <style>
-:root{
-  --ink:#20242a;
-  --muted:#5b6570;
-  --bg:#f4f6f8;
-  --panel:#ffffff;
-  --line:#d8dde3;
-  --soft:#eef2f5;
-  --soft2:#f7f8fa;
-  --accent:#59636e;
-  --fact:#245a31;
-  --factbg:#e7f0e9;
-  --infer:#74531d;
-  --inferbg:#f4ead8;
-  --hyp:#6b3d73;
-  --hypbg:#f0e7f2;
-  --link:#174f85;
-}
-*{box-sizing:border-box}
-body{
-  font-family: Arial, Helvetica, sans-serif;
-  margin:0;
-  color:var(--ink);
-  background:var(--bg);
-  line-height:1.55;
-}
-main{
-  max-width:1180px;
-  margin:0 auto;
-  background:var(--panel);
-  padding:42px 50px 72px;
-}
-h1{font-size:32px; margin:0 0 6px;}
-h2{
-  border-bottom:2px solid var(--line);
-  padding-bottom:8px;
-  margin-top:42px;
-  font-size:23px;
-}
-h3{margin-top:28px; font-size:18px;}
-p{margin:10px 0 14px;}
-.subtitle{color:var(--muted); margin-top:0;}
-.callout{
-  background:var(--soft);
-  border-left:5px solid var(--accent);
-  padding:16px 18px;
-  margin:20px 0;
-}
-.references{
-  margin:14px 0 24px;
-  padding:10px 14px;
-  background:var(--soft2);
-  border-left:4px solid #89939e;
-  font-size:12px;
-  color:#4f5964;
-}
-.references strong{color:#30363d}
-.references a{color:var(--link); word-break:break-word}
-table{
-  width:100%;
-  border-collapse:collapse;
-  font-size:13px;
-  margin:18px 0;
-}
-th{
-  background:#e9edf1;
-  text-align:left;
-  padding:9px;
-  border:1px solid #cfd5dc;
-}
-td{
-  padding:9px;
-  vertical-align:top;
-  border:1px solid var(--line);
-}
-.badge{
-  display:inline-block;
-  padding:2px 7px;
-  border-radius:3px;
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:.02em;
-  text-transform:uppercase;
-  margin-right:6px;
-}
-.fact{background:var(--factbg); color:var(--fact);}
-.inference{background:var(--inferbg); color:var(--infer);}
-.hypothesis{background:var(--hypbg); color:var(--hyp);}
-.phase{
-  border:1px solid var(--line);
-  border-radius:7px;
-  padding:15px 18px;
-  margin:12px 0;
-}
-.phase strong{display:block; margin-bottom:4px;}
-ul{margin-top:8px}
-li{margin-bottom:6px}
-.footer{
-  margin-top:46px;
-  padding-top:16px;
-  border-top:1px solid var(--line);
-  color:var(--muted);
-  font-size:12px;
-}
-@media print{
-  body{background:white}
-  main{max-width:none; padding:25mm 20mm}
-  a{color:inherit; text-decoration:none}
-}
-</style>
-</head>
-<body>
-<main>
-  <h1>Dynatrace: Stage 1 Executive Company Briefing</h1>
-  <p class="subtitle">Manager, Data Analytics – APAC | Interview preparation | 9 September 2026</p>
+:root{--ink:#182230;--muted:#667085;--line:#d8e0ea;--navy:#15233f;--blue:#2d67d6;--bg:#f4f7fb}
+*{box-sizing:border-box}body{margin:0;font-family:Aptos,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+.hero{background:linear-gradient(120deg,#101b34,#29457f);color:white;padding:46px 24px}.wrap{max-width:1180px;margin:auto}
+h1{font-size:38px;margin:6px 0}h2{color:var(--navy);margin-top:0}h3{color:#29457f}
+nav{position:sticky;top:0;background:#fffffff5;border-bottom:1px solid var(--line);z-index:5}nav .wrap{display:flex;gap:18px;padding:10px 20px;overflow:auto}nav a{text-decoration:none;color:#344054;font-weight:700;white-space:nowrap;font-size:13px}
+main{padding:26px 20px 60px}section{background:white;border:1px solid var(--line);border-radius:14px;padding:24px;margin-bottom:24px;box-shadow:0 3px 12px #1b27420a}
+.notice{background:#ffffff14;border-left:4px solid #a9c6ff;padding:12px;margin-top:16px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.box{background:#f8faff;border:1px solid var(--line);border-radius:10px;padding:15px}.quote{border-left:4px solid var(--blue);background:#f2f6ff;padding:14px;font-weight:700}
+.cards{display:grid;grid-template-columns:repeat(6,1fr);gap:9px;margin:14px 0}.card{border:1px solid var(--line);border-radius:9px;padding:11px;background:#fafcff}.big{font-size:25px;font-weight:800;color:#2459a6}.mini,small{color:var(--muted);font-size:11px}
+table{width:100%;border-collapse:collapse;font-size:13px}th{background:#edf3fb;text-align:left;padding:9px;color:#20365f}td{padding:9px;border-bottom:1px solid #e7ebf0;vertical-align:top}td a{color:#2459a6;font-weight:700;text-decoration:none}
+.badge{padding:3px 8px;border-radius:999px;font-weight:800;font-size:12px}.t1{background:#e7f6ee;color:#106945}.t2{background:#fff1d4;color:#855100}.t3{background:#eef1f4;color:#475467}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}select,input{padding:9px;border:1px solid #cbd5e1;border-radius:7px;background:white}
+.warn{background:#fff8e8;border:1px solid #ead39a;border-radius:9px;padding:13px}.good{background:#eef9f3;border:1px solid #bce2cc;border-radius:9px;padding:13px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}ul{padding-left:20px}
+@media(max-width:850px){.grid,.two{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}h1{font-size:30px}}
+</style></head><body>
+<header class="hero"><div class="wrap"><div style="text-transform:uppercase;letter-spacing:.12em;font-size:12px">Working report · v0.2 · 26-Sep-2026</div>
+<h1>Dynatrace APAC Business Insights Growth Strategy</h1>
+<p>Case-study facts, publicly disclosed customer base, a three-tier Insights prospect model, and an ANZ-led growth hypothesis.</p>
+<div class="notice"><b>Important limitation:</b> Dynatrace does not publish its full CRM customer list or each customer's Business Insights subscription status. This report uses publicly disclosed/referenced customers only. Tiering is an external business-development hypothesis to validate against internal DEM/RUM usage, account plans, contract data and pipeline.</div></div></header>
+<nav><div class="wrap"><a href="#exec">Executive view</a><a href="#case">Case study</a><a href="#tiers">Tier model</a><a href="#base">Customer base</a><a href="#anz">ANZ template</a><a href="#ideas">Strategic ideas</a><a href="#horizon">Short & long term</a><a href="#playbook">Playbook</a></div></nav>
+<main class="wrap">
+<section id="exec"><h2>1. Executive view</h2><div class="grid">
+<div class="box"><b>Demand before headcount</b><p>Paid Insights is growing, but the self-service/prospect pool is contracting. The priority is better conversion of the right installed-base accounts.</p></div>
+<div class="box"><b>Replicate ANZ capability</b><p>ANZ combines local leadership, the deepest delivery core, strongest paid growth and the healthiest major-market prospect trend. Copy the operating pattern, not simply the staff count.</p></div>
+<div class="box"><b>Japan as a pilot; UK as benchmark</b><p>Japan contains high-value digital accounts but a small base. UK provides a mature comparison for what strong customer-journey and business-value adoption looks like.</p></div></div>
+<p class="quote">Protect ANZ → identify high-value self-service accounts → convert on measurable business outcomes → strengthen regional ownership → scale headcount only where pipeline and utilisation justify it.</p></section>
 
-  <div class="callout">
-    <strong>Executive framing.</strong> This role is best understood not as a conventional internal analytics management position, but as a customer-facing commercial services leadership role. The team’s analytics work is a mechanism for proving customer value, increasing adoption and consumption, supporting renewals and expanding Dynatrace’s footprint in strategic APAC accounts.
+<section id="case"><h2>2. Case-study facts</h2><div class="two">
+<div class="box"><h3>Team</h3><ul><li><b>ANZ:</b> 5 people: Manager, Sr Analyst, 2× Sr Support, Analyst.</li><li><b>Singapore:</b> 3 people: 2× Sr Analyst + Analyst; no local lead.</li><li><b>India:</b> 2 people: Lead Support + Sr Analyst.</li></ul></div>
+<div class="box"><h3>Commercial signal</h3><ul><li><b>Insights paid customers:</b> ~+10% QoQ, +19% YoY overall.</li><li><b>ANZ:</b> ~+22% QoQ and more than doubling YoY.</li><li><b>Self-service/prospects:</b> ~-13% QoQ, -8% YoY overall.</li><li><b>ASK:</b> largest funnel risk; India also contracting.</li><li><b>Japan + UKI:</b> flat/better self-service, but Japan's base is tiny and percentage movement is noisy.</li></ul></div></div>
+<p>The case explicitly identifies uneven maturity, time-zone/cultural complexity, distributed-team leadership, limited pre-sales capacity and inconsistent articulation of digital-experience value. That makes the problem an <b>operating-model + conversion</b> challenge, not only a staffing challenge.</p></section>
+
+<section id="tiers"><h2>3. Three-tier prospect model</h2><div class="grid">
+<div class="box"><span class="badge t1">T1</span><h3>Strong Insights prospect</h3><p>High digital journey exposure, RUM/DEM relevance, measurable business KPIs and enough scale/complexity for specialist analysis to add incremental value.</p></div>
+<div class="box"><span class="badge t2">T2</span><h3>Strategic nurture / pilot</h3><p>Important account with mature Dynatrace adoption, but public evidence is mainly operational. Qualify a business-outcome use case first.</p></div>
+<div class="box"><span class="badge t3">T3</span><h3>Keep self-service / monitor</h3><p>No clear incremental Insights case from public evidence. Revisit on triggers such as growing RUM, new digital channels, conversion issues or executive KPI demand.</p></div></div>
+<p><small>Tiers indicate prospect motion, not customer value. Public evidence cannot reliably establish whether a named customer already buys Business Insights.</small></p></section>
+
+<section id="base"><h2>4. Public customer base and assessment</h2><div class="cards"><div class='card'><b>ANZ</b><div class='big'>6</div><small>public names identified</small><div class='mini'>T1 4 · T2 2 · T3 0</div></div><div class='card'><b>India</b><div class='big'>2</div><small>public names identified</small><div class='mini'>T1 2 · T2 0 · T3 0</div></div><div class='card'><b>Singapore</b><div class='big'>1</div><small>public names identified</small><div class='mini'>T1 1 · T2 0 · T3 0</div></div><div class='card'><b>ASK</b><div class='big'>4</div><small>public names identified</small><div class='mini'>T1 3 · T2 1 · T3 0</div></div><div class='card'><b>Japan</b><div class='big'>4</div><small>public names identified</small><div class='mini'>T1 2 · T2 0 · T3 2</div></div><div class='card'><b>UK</b><div class='big'>7</div><small>public names identified</small><div class='mini'>T1 6 · T2 1 · T3 0</div></div></div>
+<div class="controls"><select id="rf"><option value="">All regions</option><option>ANZ</option><option>India</option><option>Singapore</option><option>ASK</option><option>Japan</option><option>UK</option></select>
+<select id="tf"><option value="">All tiers</option><option>T1</option><option>T2</option><option>T3</option></select>
+<input id="q" placeholder="Search customer / rationale"></div>
+<div style="overflow:auto"><table id="tbl"><thead><tr><th>Region</th><th>Customer</th><th>Tier</th><th>Motion</th><th>Justification</th></tr></thead><tbody><tr data-r='ANZ' data-t='T1'><td><b>ANZ</b></td><td><a href='https://www.dynatrace.com/customers/village-roadshow/' target='_blank'>Village Roadshow</a></td><td><span class="badge t1">T1</span></td><td>Prioritise for Insights</td><td>Digital ticketing; ~$5m revenue protected; clear link between performance, customer journey and revenue.</td></tr>
+<tr data-r='ANZ' data-t='T1'><td><b>ANZ</b></td><td><a href='https://www.dynatrace.com/customers/macquarie-bank/' target='_blank'>Macquarie Bank</a></td><td><span class="badge t1">T1</span></td><td>Prioritise for Insights</td><td>2.2m customers and critical digital banking journeys. Strong fit for journey, conversion and experience analytics.</td></tr>
+<tr data-r='ANZ' data-t='T1'><td><b>ANZ</b></td><td><a href='https://www.dynatrace.com/customers/bnz/' target='_blank'>BNZ</a></td><td><span class="badge t1">T1</span></td><td>Prioritise for Insights</td><td>1.2m customers, 85 apps and 2,500+ services; mature digital banking environment and customer-experience focus.</td></tr>
+<tr data-r='ANZ' data-t='T1'><td><b>ANZ</b></td><td><a href='https://www.dynatrace.com/customers/rwwa/' target='_blank'>RWWA</a></td><td><span class="badge t1">T1</span></td><td>Prioritise for Insights</td><td>High-value digital wagering channels; real-time transactional performance and customer engagement directly affect commercial outcomes.</td></tr>
+<tr data-r='ANZ' data-t='T2'><td><b>ANZ</b></td><td><a href='https://www.dynatrace.com/customers/horizon-power/' target='_blank'>Horizon Power</a></td><td><span class="badge t2">T2</span></td><td>Selective Insights pilot</td><td>Published monetary-cost-of-issues visibility and strong service outcomes; less direct digital-commerce evidence.</td></tr>
+<tr data-r='ANZ' data-t='T2'><td><b>ANZ</b></td><td><a href='https://www.dynatrace.com/customers/ip-australia/' target='_blank'>IP Australia</a></td><td><span class="badge t2">T2</span></td><td>Selective Insights pilot</td><td>~800k online transactions/year and 99% digital service delivery. Strong citizen-journey potential, but not revenue-led.</td></tr>
+<tr data-r='India' data-t='T1'><td><b>India</b></td><td><a href='https://www.dynatrace.com/customers/shriram-capital/' target='_blank'>Shriram Capital</a></td><td><span class="badge t1">T1</span></td><td>Prioritise for Insights</td><td>Large regulated financial-services footprint; strong customer-journey and user-experience focus plus measurable operational savings.</td></tr>
+<tr data-r='India' data-t='T1'><td><b>India</b></td><td><a href='https://www.dynatrace.com/news/press-release/dynatrace-platform-now-available-on-aws-in-india/' target='_blank'>Bajaj Allianz Life Insurance</a></td><td><span class="badge t1">T1</span></td><td>Prioritise for Insights</td><td>High-volume regulated customer journeys and a public Dynatrace focus on CX, proactive troubleshooting and data value.</td></tr>
+<tr data-r='Singapore' data-t='T1'><td><b>Singapore</b></td><td><a href='https://www.dynatrace.com/partners/stories/asiapac/' target='_blank'>Synapxe / IHiS</a></td><td><span class="badge t1">T1</span></td><td>Prioritise for Insights</td><td>570 backend apps; front-end monitoring for nationwide vaccination services with up to 80k vaccinations/day. Strong service-outcome case.</td></tr>
+<tr data-r='ASK' data-t='T1'><td><b>ASK</b></td><td><a href='https://www.dynatrace.com/customers/cimb/' target='_blank'>CIMB Bank</a></td><td><span class="badge t1">T1</span></td><td>Prioritise for Insights</td><td>30m+ customers, hundreds of millions of interactions, near-zero critical incidents and explicit translation of technical data to business KPIs.</td></tr>
+<tr data-r='ASK' data-t='T1'><td><b>ASK</b></td><td><a href='https://www.dynatrace.com/customers/kbtg/' target='_blank'>KBTG / KBank</a></td><td><span class="badge t1">T1</span></td><td>Prioritise for Insights</td><td>23m+ customers and 400+ apps. Mature digital banking environment with strong customer-experience economics.</td></tr>
+<tr data-r='ASK' data-t='T1'><td><b>ASK</b></td><td><a href='https://www.dynatrace.com/customers/paymaya/' target='_blank'>PayMaya</a></td><td><span class="badge t1">T1</span></td><td>Prioritise for Insights</td><td>Digital wallet/mobile payments are directly dependent on real-user experience and transaction success; current story is platform-led.</td></tr>
+<tr data-r='ASK' data-t='T2'><td><b>ASK</b></td><td><a href='https://www.dynatrace.com/customers/mizuho-securities-asia/' target='_blank'>Mizuho Securities Asia</a></td><td><span class="badge t2">T2</span></td><td>Selective Insights pilot</td><td>Regional financial-services account with Seoul presence; public evidence is more operational than customer-journey-led.</td></tr>
+<tr data-r='Japan' data-t='T1'><td><b>Japan</b></td><td><a href='https://www.dynatrace.com/ja/customers/globeride/' target='_blank'>Globeride</a></td><td><span class="badge t1">T1</span></td><td>Prioritise for Insights</td><td>Explicit RUM/UX health dashboard development, e-commerce and MyDAIWA app. Direct link between digital performance and sales opportunity.</td></tr>
+<tr data-r='Japan' data-t='T1'><td><b>Japan</b></td><td><a href='https://www.dynatrace.com/ja/customers/dena/' target='_blank'>DeNA</a></td><td><span class="badge t1">T1</span></td><td>Prioritise for Insights</td><td>Digital-native portfolio spanning games, live streaming, sports and healthcare; high-value consumer digital journeys.</td></tr>
+<tr data-r='Japan' data-t='T3'><td><b>Japan</b></td><td><a href='https://www.dynatrace.com/customers/fujitsu/' target='_blank'>Fujitsu</a></td><td><span class="badge t3">T3</span></td><td>Keep self-service / monitor</td><td>Very large enterprise and mature adoption with ~9,960 troubleshooting hours/year expected saved, but current public use is mainly internal operations. Keep self-service unless a customer-facing DEM/business KPI use case emerges.</td></tr>
+<tr data-r='Japan' data-t='T3'><td><b>Japan</b></td><td><a href='https://www.dynatrace.com/ja/customers/dai-nippon-printing-group/' target='_blank'>DNP Group</a></td><td><span class="badge t3">T3</span></td><td>Keep self-service / monitor</td><td>Large diversified enterprise and modernization program; current public story is mainly observability/operations rather than external journey analytics. Keep self-service until a clear customer-experience or business-KPI trigger appears.</td></tr>
+<tr data-r='UK' data-t='T1'><td><b>UK</b></td><td><a href='https://www.dynatrace.com/customers/bt-digital-transformation/' target='_blank'>BT</a></td><td><span class="badge t1">T1</span></td><td>Benchmark archetype</td><td>80m customers; up to 90% faster root cause; performance explicitly linked to conversion and £28m cost-saving target.</td></tr>
+<tr data-r='UK' data-t='T1'><td><b>UK</b></td><td><a href='https://www.dynatrace.com/customers/next/' target='_blank'>Next</a></td><td><span class="badge t1">T1</span></td><td>Benchmark archetype</td><td>Millions of online customers; RUM/customer journeys, fraud and digital revenue make a strong business-value template.</td></tr>
+<tr data-r='UK' data-t='T1'><td><b>UK</b></td><td><a href='https://www.dynatrace.com/customers/vitality/' target='_blank'>Vitality</a></td><td><span class="badge t1">T1</span></td><td>Benchmark archetype</td><td>1m+ members; 65% churn reduction and explicit financial value from customer retention.</td></tr>
+<tr data-r='UK' data-t='T1'><td><b>UK</b></td><td><a href='https://www.dynatrace.com/customers/nationwide/' target='_blank'>Nationwide</a></td><td><span class="badge t1">T1</span></td><td>Benchmark archetype</td><td>17m customers; end-to-end journeys, transaction impact and business-service context.</td></tr>
+<tr data-r='UK' data-t='T1'><td><b>UK</b></td><td><a href='https://www.dynatrace.com/customers/tsb/' target='_blank'>TSB</a></td><td><span class="badge t1">T1</span></td><td>Benchmark archetype</td><td>5m+ customers and a strong digital-banking/customer-journey strategy.</td></tr>
+<tr data-r='UK' data-t='T1'><td><b>UK</b></td><td><a href='https://www.dynatrace.com/customers/mitchells-and-butlers/' target='_blank'>Mitchells &amp; Butlers</a></td><td><span class="badge t1">T1</span></td><td>Benchmark / strongest BI linkage</td><td>1,700 venues; digital revenue streams and real-time business analytics. Featured prominently on Dynatrace Business Insights material.</td></tr>
+<tr data-r='UK' data-t='T2'><td><b>UK</b></td><td><a href='https://www.dynatrace.com/customers/hmcts/' target='_blank'>HMCTS</a></td><td><span class="badge t2">T2</span></td><td>Benchmark public-service archetype</td><td>User-journey drop-off dashboards and 70% lower MTTR; strong service-value rather than revenue-value model.</td></tr></tbody></table></div>
+<div class="warn" style="margin-top:16px"><b>Evidence gaps matter:</b> Singapore and domestic South Korea have relatively few named public customer stories. Event speakers or logos without clear customer confirmation are not included. This is a reason to validate internal account data before recommending significant new local headcount.</div></section>
+
+<section id="anz"><h2>5. Why ANZ is the best internal success template</h2><div class="grid">
+<div class="box"><b>1. Leadership density</b><p>The only on-ground manager sits in ANZ, supporting coaching, customer relationships and local sales enablement.</p></div>
+<div class="box"><b>2. Delivery depth</b><p>Five of the ten APAC resources are in ANZ, including senior support and analytics roles.</p></div>
+<div class="box"><b>3. Market/customer fit</b><p>The public base includes banks, wagering, ticketing, utilities and digital government services where experience can be tied to revenue, transaction success or service outcomes.</p></div></div>
+<h3>Public customer archetypes</h3><ul><li><b>Village Roadshow:</b> strongest direct commercial example: roughly $5m revenue opportunity protected.</li><li><b>Macquarie / BNZ:</b> millions of banking customers and critical digital journeys.</li><li><b>RWWA:</b> high-value digital channels with customer engagement and revenue exposure.</li><li><b>Horizon Power / IP Australia:</b> prove that Insights can also quantify service reliability, cost and citizen outcomes.</li></ul>
+<div class="warn"><b>Causality caution:</b> the deck proves aggregate ANZ paid-Insights growth, but public sources do not identify which named ANZ customers are paid Business Insights customers. Treat this customer mix as an archetype explanation, not contract attribution.</div>
+<p class="quote">ANZ template: Platform adoption → DEM/RUM → measurable business KPI → analyst-led insight → action → verified outcome → customer story → sales enablement → next conversion.</p></section>
+
+<section id="ideas"><h2>6. Testing your three ideas</h2>
+<h3>1. Manager in India and/or Singapore?</h3><p><b>Singapore: strengthen leadership first, but I would not automatically add a full manager.</b> With two Senior Analysts already in place, the missing capability is local ownership, presales and coaching. Promote/designate a Senior Analyst as a player-coach Regional Insights Lead with a conversion KPI. Add a manager when team size and pipeline justify the overhead.</p>
+<p><b>India: a manager is lower priority.</b> Two people, a very small paid base and a shrinking funnel do not yet justify another management layer. Expand the existing Lead Support remit or add commercially capable senior consulting capacity first.</p>
+<h3>2. Japan as a high-value target?</h3><p><b>Yes, selectively.</b> Globeride is particularly compelling because it is building UX health dashboards from RUM and has e-commerce exposure; DeNA is a high-value digital-native account. Fujitsu and DNP are valuable but need clearer external-customer/business-KPI use cases. Run an account-based pilot before adding dedicated headcount.</p>
+<h3>3. UK as the comparison market?</h3><p><b>Yes.</b> The UK is useful as a maturity benchmark, not an APJC target. BT, Next, Vitality, Nationwide, TSB and Mitchells & Butlers demonstrate the account characteristics APJC should look for: large digital populations, RUM/customer journeys, business KPI linkage and measurable financial/service outcomes.</p>
+<div class="grid"><div class="good"><b>Recommendation 1</b><br>Make Singapore the first player-coach leadership experiment and measure conversion before creating another formal manager.</div>
+<div class="good"><b>Recommendation 2</b><br>Run a 90-day Japan pilot across 5–10 high-value accounts; measure qualified use cases, executive engagement, pilots and paid conversion.</div>
+<div class="good"><b>Recommendation 3</b><br>Reverse-engineer the UK maturity playbook and apply its conversion triggers to ANZ, ASK and Japan.</div></div></section>
+
+
+<section id="horizon">
+<h2>7. Short-term and long-term plan</h2>
+<div class="two">
+  <div class="box">
+    <div style="text-transform:uppercase;letter-spacing:.08em;font-size:12px;color:#2459a6;font-weight:800">Short term · FY27</div>
+    <h3>Grow paid Insights faster than headcount</h3>
+    <p><b>Objective:</b> improve APAC growth by converting more of the existing Dynatrace installed base into paid Business Insights customers, particularly in India and ASK, while holding the delivery cost base broadly stable.</p>
+    <ul>
+      <li><b>India:</b> concentrate on the small existing account base and identify 3–5 high-value conversion candidates with strong customer-journey, RUM/DEM or executive KPI use cases. Shriram Capital and Bajaj Allianz-type accounts are the clearest public archetypes.</li>
+      <li><b>ASK:</b> repair the funnel by targeting mature digital banks and payments customers such as CIMB, KBTG and PayMaya-type accounts where Dynatrace is already embedded and business outcomes can be quantified.</li>
+      <li><b>Singapore:</b> use the existing senior analyst capacity as the regional commercial hub. Create a player-coach Regional Insights Lead rather than adding a full new management layer immediately.</li>
+      <li><b>ANZ:</b> protect the strongest-performing region and codify its sales, customer-engagement and delivery practices into a repeatable conversion playbook for the rest of APAC.</li>
+    </ul>
+    <p><b>FY27 principle:</b> monetise the capacity already in place before materially increasing headcount.</p>
   </div>
-
-  <h2>1. Company in One Paragraph</h2>
-  <p><span class="badge fact">Observed Fact</span>Dynatrace is a NYSE-listed enterprise software company focused on AI-powered observability. Its platform helps large organisations understand the performance, reliability, security and business impact of complex applications and cloud environments. The portfolio spans application and infrastructure observability, digital experience, log analytics, application security, software delivery and business analytics. Revenue is predominantly subscription based, and an increasing share is sold through the Dynatrace Platform Subscription (DPS), under which customers commit annual platform spend and consume capabilities according to usage. As of 31 March 2026, Dynatrace reported approximately 4,100 customers across more than 110 countries, FY26 revenue of about US$2.018 billion and ARR of about US$2.054 billion. Strategically, the company has evolved from application-performance monitoring into a unified observability and data platform and is now pushing further toward AI-driven and agentic operations.</p>
-
-  <div class="references"><strong>References: </strong>
-    <a href="https://ir.dynatrace.com/sec-filings/all-sec-filings/content/0001773383-26-000019/dt-20260331.htm">Dynatrace FY26 Form 10-K</a> |
-    <a href="https://www.dynatrace.com/">Dynatrace platform overview</a>
+  <div class="box">
+    <div style="text-transform:uppercase;letter-spacing:.08em;font-size:12px;color:#2459a6;font-weight:800">Long term · beyond FY27</div>
+    <h3>Scale only where account density and conversion prove the market</h3>
+    <p><b>Objective:</b> grow the number of addressable accounts and then add regional capability where the economics justify dedicated coverage.</p>
+    <ul>
+      <li><b>India:</b> increase account coverage and analyst capacity after conversion improves. India offers attractive long-term scale economics because senior delivery resources can be added at materially lower cost than ANZ or Singapore.</li>
+      <li><b>Japan:</b> build a targeted high-value account strategy. Start with existing digital-native and RUM-intensive customers, prove paid-Insights conversion, then add Japanese-speaking senior capability when a repeatable pipeline exists.</li>
+      <li><b>ASK:</b> add local-language or market-specific resources only where a cluster of qualified accounts justifies it; avoid duplicating management structures across small markets.</li>
+      <li><b>Operating model:</b> evolve toward an APAC hub-and-spoke structure with regional commercial leadership, shared specialist capacity and hiring tied to demand rather than geography alone.</li>
+    </ul>
+    <p><b>Long-term principle:</b> first prove the conversion engine, then scale the customer base and delivery model behind it.</p>
   </div>
+</div>
+<h3>Recommended sequencing</h3>
+<table>
+<thead><tr><th>Horizon</th><th>Market focus</th><th>Primary action</th><th>Decision gate</th></tr></thead>
+<tbody>
+<tr><td><b>0–90 days</b></td><td>ANZ, India, ASK</td><td>Define eligible-account criteria, build a named-account conversion list, document the ANZ playbook and give Singapore a player-coach commercial lead.</td><td>Qualified pipeline and executive access established.</td></tr>
+<tr><td><b>3–12 months</b></td><td>India, ASK, Japan pilot</td><td>Convert existing high-fit accounts without broad headcount growth; run a tightly scoped Japan pilot.</td><td>Paid conversion, utilisation, verified value and pipeline coverage support further investment.</td></tr>
+<tr><td><b>12–24 months</b></td><td>India + Japan</td><td>Increase account coverage and add senior/local-language capacity where conversion has become repeatable.</td><td>Sustainable account density and revenue justify dedicated roles.</td></tr>
+<tr><td><b>24+ months</b></td><td>APAC portfolio</td><td>Scale the hub-and-spoke model, balancing commercial ownership with shared specialist delivery.</td><td>Regional contribution is diversified and no longer dependent on ANZ or a small number of accounts.</td></tr>
+</tbody>
+</table>
+<h3>FY27 measures that should govern the plan</h3>
+<div class="grid">
+  <div class="good"><b>Conversion</b><br>Self-service / eligible account → paid Insights conversion rate, with India and ASK reported separately.</div>
+  <div class="good"><b>Growth efficiency</b><br>Paid Insights customer and revenue growth relative to headcount growth. The short-term target is positive operating leverage.</div>
+  <div class="good"><b>Market quality</b><br>Qualified pipeline coverage, number of Tier-1 prospects, customer concentration and percentage of recommendations that lead to measurable action.</div>
+</div>
+<div class="warn" style="margin-top:16px"><b>Important challenge to the short-term thesis:</b> India and ASK should not be targeted simply because resources already exist there. The case shows India resting on a very small number of paid accounts and ASK carrying the clearest funnel weakness. The short-term opportunity is therefore <b>focused conversion of high-fit existing customers</b>, not a broad regional growth campaign. If conversion does not improve, preserving headcount alone will not lift FY27 growth.</div>
+<p class="quote">Short term: <b>extract more growth from the installed base without materially increasing cost.</b><br>Long term: <b>expand the account base in India and Japan, then scale local capability only after the conversion model is proven.</b></p>
+</section>
 
-  <h2>2. Observed Facts</h2>
-  <table>
-    <thead>
-      <tr><th>Observed Fact</th><th>Why It Matters for This Role</th></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>FY26 revenue reached approximately US$2.018bn, up 19%, while ARR reached approximately US$2.054bn, up 18%.</td>
-        <td>Dynatrace is already a scaled enterprise software company. The APAC analytics leader is operating inside a mature growth engine, not building a nascent capability.</td>
-      </tr>
-      <tr>
-        <td>Q1 FY27 ARR reached approximately US$2.136bn, up 17%, with quarterly revenue of approximately US$555m, up 16%.</td>
-        <td>Growth remains strong, but sustaining it at this scale increasingly depends on expansion inside the installed base.</td>
-      </tr>
-      <tr>
-        <td>Dynatrace targets the world’s largest enterprise accounts and has placed increased emphasis on the biggest strategic accounts.</td>
-        <td>The job description’s focus on the top 10–15 accounts fits a deliberate large-enterprise penetration strategy.</td>
-      </tr>
-      <tr>
-        <td>DPS has become a major part of the commercial model, with a large and growing share of ARR tied to consumption-oriented platform subscriptions.</td>
-        <td>Adoption and consumption are not merely customer-success measures; they are economically relevant to retention and growth.</td>
-      </tr>
-      <tr>
-        <td>Business Insights is designed to turn Digital Experience and Business Analytics data into recommendations and measurable business outcomes.</td>
-        <td>The team sits between technical telemetry, executive decision-making and commercial expansion.</td>
-      </tr>
-      <tr>
-        <td>Business Insights capabilities are being embedded more directly into the Dynatrace platform and positioned as a base for advanced machine-learning and data-science approaches using Grail data.</td>
-        <td>The service appears to be moving from analyst-led expertise toward a more scalable product-plus-expertise operating model.</td>
-      </tr>
-      <tr>
-        <td>Dynatrace is increasingly positioning its future around AI, automation and agentic operations.</td>
-        <td>Customers will need clearer evidence that sophisticated observability and AI capabilities translate into measurable business outcomes.</td>
-      </tr>
-    </tbody>
-  </table>
+<section id="playbook"><h2>8. Initial market playbook</h2><table><thead><tr><th>Market</th><th>Role</th><th>Near-term move</th><th>Hiring stance</th></tr></thead><tbody>
+<tr><td><b>ANZ</b></td><td>Success template</td><td>Document conversion motions, value stories and eligibility triggers.</td><td>Protect capacity; hire against utilisation/pipeline.</td></tr>
+<tr><td><b>Singapore</b></td><td>Regional hub</td><td>Create player-coach lead; improve presales and ASK account rhythm.</td><td>Leadership before analyst volume.</td></tr>
+<tr><td><b>India</b></td><td>Diagnose conversion</td><td>Target Shriram/Bajaj-type financial-services archetypes and understand funnel loss.</td><td>No standalone manager yet.</td></tr>
+<tr><td><b>ASK</b></td><td>Funnel repair</td><td>Prioritise banking/digital payments and build repeatable value stories from CIMB/KBTG.</td><td>Use Singapore hub; localise selectively.</td></tr>
+<tr><td><b>Japan</b></td><td>High-value experiment</td><td>Account-based pilot around Globeride/DeNA-type customers.</td><td>Prove conversion before dedicated team.</td></tr>
+<tr><td><b>UK</b></td><td>Maturity benchmark</td><td>Extract segmentation, value messaging and conversion triggers.</td><td>No APJC headcount implication.</td></tr>
+</tbody></table>
+<h3>Public Business Insights proof point</h3><p>Dynatrace publicly describes Business Insights as a dedicated team combining DEM and Business Analytics expertise. Its published examples include an unnamed large UK retailer where resolving a performance issue reduced exit rate by 2% and drove more than $500k additional monthly revenue. That is the kind of <b>incremental outcome</b> APJC should sell, rather than “more monitoring.”</p>
+<p><b>Core KPIs:</b> eligible self-service accounts, qualified Insights pipeline, self-service→paid conversion, analyst-assisted opportunity conversion, recommendation action rate, verified business impact, utilisation and customer advocacy.</p></section>
 
-  <div class="references"><strong>References: </strong>
-    <a href="https://ir.dynatrace.com/sec-filings/all-sec-filings/content/0001773383-26-000019/dt-20260331.htm">FY26 Form 10-K</a> |
-    <a href="https://ir.dynatrace.com/sec-filings/all-sec-filings/content/0001773383-26-000050/dt-20260630.htm">Q1 FY27 filing</a> |
-    <a href="https://ir.dynatrace.com/sec-filings/all-sec-filings/content/0001773383-25-000065/dt-20250331.htm">FY25 Form 10-K</a> |
-    <a href="https://www.dynatrace.com/services-support/business-insights/">Dynatrace Business Insights</a> |
-    <a href="https://docs.dynatrace.com/docs/observe/digital-experience/business-insights/business-insights-app">Business Insights app documentation</a>
-  </div>
-
-  <h2>3. Major Turning Points</h2>
-
-  <div class="phase">
-    <strong>2005–2011 — Technical origin</strong>
-    <span class="badge fact">Observed Fact</span>
-    Dynatrace was founded in Linz, Austria in 2005 and built its reputation around deep application tracing and performance management. Compuware acquired the company in 2011 for approximately US$256 million. This established the technical DNA that still shapes the company today.
-  </div>
-
-  <div class="phase">
-    <strong>2014–2016 — Independence and platform reinvention</strong>
-    <span class="badge fact">Observed Fact</span>
-    Following Thoma Bravo’s acquisition of Compuware, Dynatrace emerged as a standalone business. Around 2015–16, the company reinvented the platform for cloud-native and more distributed environments. This was the decisive shift from traditional APM toward modern observability.
-  </div>
-
-  <div class="phase">
-    <strong>2019 — Public company transition</strong>
-    <span class="badge fact">Observed Fact</span>
-    Dynatrace listed on the NYSE in 2019. The IPO accelerated its evolution into a scaled global enterprise-software company with the capital, visibility and governance expectations of a listed business.
-  </div>
-
-  <div class="phase">
-    <strong>2022 onward — Unified data and platform expansion</strong>
-    <span class="badge fact">Observed Fact</span>
-    Grail became a core technology layer and the portfolio broadened across observability, security, developer workflows and business analytics. This increased the number of use cases, personas and data domains Dynatrace could support.
-  </div>
-
-  <div class="phase">
-    <strong>2023–2025 — Consumption economics and strategic-account expansion</strong>
-    <span class="badge fact">Observed Fact</span>
-    DPS became increasingly important, while Dynatrace also expanded product breadth through acquisitions and sharpened focus on strategic enterprise accounts. This altered the commercial model from simply selling capability toward helping customers consume more value over time.
-  </div>
-
-  <div class="phase">
-    <strong>2025–2026 — Business Insights becomes more productised</strong>
-    <span class="badge fact">Observed Fact</span>
-    Business Insights analysis and customer engagement moved more directly into the Dynatrace platform, strengthening the connection between specialist expertise, platform data and repeatable customer-value workflows.
-  </div>
-
-  <div class="references"><strong>References: </strong>
-    <a href="https://www.dynatrace.com/careers/about/">Dynatrace company history</a> |
-    <a href="https://www.sec.gov/Archives/edgar/data/859014/000114036111036238/ex99_1.htm">Compuware acquisition announcement</a> |
-    <a href="https://ir.dynatrace.com/sec-filings/all-sec-filings/content/0001628280-19-014821/dynatrace424b4275mshares.htm">2019 IPO filing</a> |
-    <a href="https://www.dynatrace.com/news/press-release/dynatrace-to-acquire-rookout/">Rookout acquisition</a> |
-    <a href="https://docs.dynatrace.com/docs/observe/digital-experience/business-insights/business-insights-app">Business Insights app documentation</a>
-  </div>
-
-  <h2>4. Strategic Evolution</h2>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Phase</th>
-        <th>Business Proposition</th>
-        <th>Operating Complexity</th>
-        <th>Data / Commercial Implication</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>APM specialist</td>
-        <td>Diagnose application performance</td>
-        <td>Relatively bounded technical domain</td>
-        <td>Deep technical telemetry was the main differentiator.</td>
-      </tr>
-      <tr>
-        <td>Cloud observability platform</td>
-        <td>Understand distributed, hybrid and cloud-native systems</td>
-        <td>More complex architectures and larger enterprise estates</td>
-        <td>Correlation across many signals became essential.</td>
-      </tr>
-      <tr>
-        <td>Unified enterprise platform</td>
-        <td>Observability, security, developer and business use cases</td>
-        <td>More products, personas and executive stakeholders</td>
-        <td>Customers need cross-domain context, not isolated dashboards.</td>
-      </tr>
-      <tr>
-        <td>Consumption platform</td>
-        <td>Commit to a platform and expand use over time</td>
-        <td>Commercial success depends on post-sale adoption and maturity</td>
-        <td>Usage, customer value and expansion become linked.</td>
-      </tr>
-      <tr>
-        <td>AI / agentic operations</td>
-        <td>Move from understanding to prioritising and acting</td>
-        <td>Technical and business decisioning converge</td>
-        <td>Context, trust, measurable outcomes and executive interpretation become more important.</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <p><span class="badge inference">Strong Inference</span>Dynatrace appears to be evolving from an observability system that mainly tells technical teams what is happening into an intelligence and action layer that helps organisations understand what matters and what to do next. Business Insights is strategically important because it is one of the clearest bridges between technical platform evidence and executive business value.</p>
-
-  <div class="references"><strong>References: </strong>
-    <a href="https://ir.dynatrace.com/sec-filings/all-sec-filings/content/0001773383-25-000065/dt-20250331.htm">FY25 Form 10-K</a> |
-    <a href="https://www.dynatrace.com/services-support/business-insights/">Business Insights</a> |
-    <a href="https://www.dynatrace.com/">Dynatrace platform</a>
-  </div>
-
-  <h2>5. Why the Role Exists Now</h2>
-
-  <div class="callout">
-    <p><span class="badge inference">Strong Inference</span><strong>Dynatrace needs to industrialise customer value creation in APAC as its commercial model becomes increasingly consumption driven.</strong></p>
-    <p>The evidence aligns closely with the role description: Dynatrace wants deeper platform adoption and consumption; Business Insights exists to convert product data into recommendations and business outcomes; and the APAC manager is explicitly accountable for customer value, account growth, consumption, maturity, renewals, expansion, resource allocation and executive reporting.</p>
-  </div>
-
-  <p>This suggests the role is not simply being created to supervise analysts. The business appears to need someone who can make the APAC Business Insights capability operate as a repeatable regional growth and value engine.</p>
-
-  <p>A practical interpretation of the mandate is:</p>
-  <ul>
-    <li>create clearer portfolio visibility across the most important APAC accounts;</li>
-    <li>prioritise scarce analyst capacity against the highest-value customer opportunities and risks;</li>
-    <li>standardise how value is demonstrated to executives;</li>
-    <li>help Sales and account teams connect realised value to renewals and expansion;</li>
-    <li>convert successful one-off analyses into reusable use cases, collateral and operating practices;</li>
-    <li>help evolve Business Insights from expert-led service delivery into a more scalable capability.</li>
-  </ul>
-
-  <div class="references"><strong>References: </strong>
-    <a href="https://ir.dynatrace.com/sec-filings/all-sec-filings/content/0001773383-25-000065/dt-20250331.htm">FY25 Form 10-K</a> |
-    <a href="https://www.dynatrace.com/services-support/business-insights/">Business Insights</a> |
-    <a href="https://docs.dynatrace.com/docs/observe/digital-experience/business-insights/business-insights-app">Business Insights app documentation</a>
-  </div>
-
-  <h2>6. The Real Business Problem</h2>
-
-  <p><span class="badge hypothesis">Working Hypothesis</span>The underlying business problem is that Dynatrace can generate vast quantities of technical evidence about digital systems, but customers do not automatically convert that evidence into enough measurable business action, organisational adoption or platform consumption.</p>
-
-  <p>Business Insights exists to close that gap. The operating chain the team needs to strengthen is:</p>
-
-  <div class="callout">
-    <strong>Dynatrace telemetry → insight → recommendation → customer action → measurable business outcome → demonstrated value → higher maturity → broader consumption → renewal / expansion</strong>
-  </div>
-
-  <p>The manager’s job is therefore to make this value chain repeatable across the APAC portfolio rather than dependent on individual analysts or isolated engagements.</p>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Hypothesis Test</th>
-        <th>Assessment</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Supporting evidence</td>
-        <td>The job description emphasises top-account reviews, consumption, maturity, renewals, Sales partnership, executive escalation, QBRs, resource allocation, standardised reporting and reusable use cases.</td>
-      </tr>
-      <tr>
-        <td>Limiting evidence</td>
-        <td>Public sources do not reveal the current internal maturity of the APAC Business Insights team or whether the role is newly created versus a replacement.</td>
-      </tr>
-      <tr>
-        <td>Confidence</td>
-        <td>Medium-high.</td>
-      </tr>
-      <tr>
-        <td>What would confirm it</td>
-        <td>Interview comments such as “we need more consistency”, “we need to scale”, “Sales does not always understand the value”, “accounts are at very different maturity levels”, or “analysts are spread too thin”.</td>
-      </tr>
-      <tr>
-        <td>What would disprove it</td>
-        <td>If the team already has mature governance and value measurement and the role exists mainly because of straightforward APAC headcount growth.</td>
-      </tr>
-      <tr>
-        <td>Business implication</td>
-        <td>The successful hire would need to build a portfolio operating model, not merely manage individual analysts.</td>
-      </tr>
-      <tr>
-        <td>Interview implication</td>
-        <td>Probe for what is currently inconsistent, hard to scale or insufficiently visible before proposing solutions.</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="references"><strong>References: </strong>
-    <a href="https://www.dynatrace.com/services-support/business-insights/">Dynatrace Business Insights</a> |
-    <a href="https://ir.dynatrace.com/sec-filings/all-sec-filings/content/0001773383-25-000065/dt-20250331.htm">FY25 Form 10-K</a>
-  </div>
-
-  <div class="footer">
-    Prepared as a Stage 1 executive briefing only. Important interpretation is explicitly separated between observed fact, strong inference and working hypothesis. No Stage 2 dossier content has been included.
-  </div>
+<section><h2>9. Primary public research links</h2><ul>
+<li><a href="https://www.dynatrace.com/services-support/business-insights/" target="_blank">Dynatrace Business Insights</a></li>
+<li><a href="https://www.dynatrace.com/news/blog/the-power-of-business-insights-expertise-now-directly-on-the-dynatrace-platform/" target="_blank">Business Insights app and outcome examples</a></li>
+<li><a href="https://www.dynatrace.com/customers/" target="_blank">Dynatrace Customer Stories</a></li>
+<li><a href="https://docs.dynatrace.com/docs/observe/digital-experience/business-insights" target="_blank">Digital Experience Monitoring with Insights documentation</a></li>
+</ul></section>
 </main>
-</body>
-</html>
+<script>
+const rows=[...document.querySelectorAll('#tbl tbody tr')],rf=document.getElementById('rf'),tf=document.getElementById('tf'),q=document.getElementById('q');
+function f(){const r=rf.value.toLowerCase(),t=tf.value.toLowerCase(),s=q.value.toLowerCase();rows.forEach(x=>x.style.display=(!r||x.dataset.r.toLowerCase()==r)&&(!t||x.dataset.t.toLowerCase()==t)&&(!s||x.innerText.toLowerCase().includes(s))?'':'none')}
+rf.onchange=tf.onchange=q.oninput=f;
+</script></body></html>
