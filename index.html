@@ -113,11 +113,10 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{background:#f0edff;t
 .map-region b{color:#37216d}
 .meter{height:6px;background:#ebe7f2;border-radius:999px;overflow:hidden;margin:4px 0 7px}
 .meter span{display:block;height:100%;background:linear-gradient(90deg,var(--purple),var(--cyan))}
-.map-legend{display:flex;gap:12px;flex-wrap:wrap;padding:8px 16px 14px;font-size:11px;color:var(--muted)}
+.map-canvas{min-width:0}.map-legend{display:flex;align-items:center;justify-content:flex-start;gap:12px;flex-wrap:nowrap;padding:8px 12px;font-size:10.5px;color:var(--muted);background:#fbfaff;border-bottom:1px solid var(--line);white-space:nowrap;overflow-x:auto}
 .map-legend span{display:inline-flex;align-items:center;gap:6px}
 .map-dot{width:10px;height:10px;border-radius:50%;display:inline-block}
 .map-diamond{width:10px;height:10px;display:inline-block;transform:rotate(45deg);background:var(--cyan);border:1px solid #24124e}
-.map-star{font-size:14px;color:var(--purple);line-height:1}
 .map-note{padding:0 16px 14px;color:var(--muted);font-size:10.5px;line-height:1.35}
 @media(max-width:900px){
   .report-meta{align-items:flex-start;flex-direction:column;gap:4px}
@@ -130,7 +129,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{background:#f0edff;t
 </style></head><body>
 <header class="hero"><div class="wrap">
 <div class="report-meta">
-  <span>Working report · v0.20 · 26-Sep-2026</span>
+  <span>Working report · v0.26 · 26-Sep-2026</span>
   <a href="https://www.dynatrace.com/" target="_blank" rel="noopener">Dynatrace | Observability built for the age of AI</a>
 </div>
 <h1>Dynatrace APAC Business Insights Growth Strategy</h1>
@@ -237,7 +236,16 @@ Dynatrace APAC BI Team Manager Practical (provided case study) ·
     <p><small>Customer bubbles are colour-coded by Tier and sized by an indicative <b>business-scale proxy</b> using public signals such as customer reach, transaction/service scale and enterprise footprint. Resource markers use the case-study team footprint. This is a prioritisation visual, not a valuation model.</small></p>
   </div>
   <div class="apjc-map-grid">
-    <div id="apjcMap" aria-label="APJC Dynatrace Business Insights opportunity map"></div>
+    <div class="map-canvas">
+      <div class="map-legend">
+        <span><i class="map-dot" style="background:#b6f23a"></i>Tier 1 customer</span>
+        <span><i class="map-dot" style="background:#8f4dff"></i>Tier 2 customer</span>
+        <span><i class="map-dot" style="background:#a6a1b3"></i>Tier 3 customer</span>
+        <span><i class="map-diamond"></i>Current delivery resource hub</span>
+        <span>Bubble size = indicative business scale</span>
+      </div>
+      <div id="apjcMap" aria-label="APJC Dynatrace Business Insights opportunity map"></div>
+    </div>
     <aside class="map-side">
       <h4>Regional signals</h4>
       <div class="map-region"><b>ANZ · 5 resources</b><br>Leadership: local Manager<br>DEM/RUM fit: Very high<div class="meter"><span style="width:100%"></span></div>Business Insights fit: Very high<div class="meter"><span style="width:100%"></span></div><small>Protect and replicate the operating pattern.</small></div>
@@ -245,14 +253,6 @@ Dynatrace APAC BI Team Manager Practical (provided case study) ·
       <div class="map-region"><b>India · 2 resources</b><br>Lead Support + Sr Analyst<br>DEM/RUM fit: High<div class="meter"><span style="width:82%"></span></div>Business Insights fit: High<div class="meter"><span style="width:82%"></span></div><small>Large regulated-customer potential with attractive scaling economics.</small></div>
       <div class="map-region"><b>Japan · 0 current team resources</b><br>Distinct language / market model<br>DEM/RUM fit: High<div class="meter"><span style="width:82%"></span></div>Business Insights fit: Medium–High<div class="meter"><span style="width:66%"></span></div><small>High-value long-term market; validate repeatable pipeline before dedicated team build-out.</small></div>
     </aside>
-  </div>
-  <div class="map-legend">
-    <span><i class="map-dot" style="background:#b6f23a"></i>Tier 1 customer</span>
-    <span><i class="map-dot" style="background:#8f4dff"></i>Tier 2 customer</span>
-    <span><i class="map-dot" style="background:#a6a1b3"></i>Tier 3 customer</span>
-    <span><i class="map-diamond"></i>Current delivery resource hub</span>
-    <span><i class="map-star">★</i>Local market leadership</span>
-    <span>Bubble size = indicative business scale</span>
   </div>
   <div class="map-note"><b>Reading the map:</b> large Tier-1 bubbles close to an existing delivery base are the strongest short-term conversion candidates. Large bubbles without local leadership or delivery depth are longer-term market-development opportunities. DEM/RUM and Business Insights fit scores are directional hypotheses based on the public customer evidence in this report and should be validated against internal telemetry, account plans and CRM data.</div>
 </div>
@@ -446,27 +446,10 @@ const APJC_RESOURCES=[{"city": "Sydney", "lat": -33.8688, "lon": 151.2093, "n": 
 function buildApjcMap(){
   if(typeof Plotly==='undefined') return;
   const tierColours={T1:'#b6f23a',T2:'#8f4dff',T3:'#a6a1b3'};
-  const traces=['T1','T2','T3'].map(tier=>{
-    const d=APJC_CUSTOMERS.filter(x=>x.tier===tier);
-    return {
-      type:'scattergeo',
-      mode:'markers',
-      name:tier+' customers',
-      lat:d.map(x=>x.lat),
-      lon:d.map(x=>x.lon),
-      text:d.map(x=>`<b>${x.name}</b><br>${x.city}, ${x.country}<br>Region: ${x.region}<br>Tier: ${x.tier}<br>Business scale: ${x.scale}<br>DEM/RUM fit: ${x.dem}<br>Business Insights fit: ${x.bi}<br>${x.signal}`),
-      hovertemplate:'%{text}<extra></extra>',
-      marker:{
-        size:d.map(x=>x.size),
-        color:tierColours[tier],
-        opacity:.80,
-        line:{color:'#24124e',width:1.2}
-      }
-    };
-  });
+  const delivery=[...APJC_RESOURCES];
 
-  const delivery=APJC_RESOURCES.filter(x=>!x.leadership);
-  traces.push({
+  // Draw delivery hubs first so customer bubbles are rendered above them.
+  const traces=[{
     type:'scattergeo',
     mode:'markers',
     name:'Delivery resources',
@@ -476,31 +459,28 @@ function buildApjcMap(){
     hovertemplate:'%{text}<extra></extra>',
     marker:{
       symbol:'diamond',
-      size:delivery.map(x=>14+x.n*5),
+      size:delivery.map(x=>14+x.n*4),
       color:'#22c7e8',
-      opacity:.95,
-      line:{color:'#24124e',width:2}
+      opacity:.78,
+      line:{width:0}
     }
-  });
+  }];
 
-  const leaders=APJC_RESOURCES.filter(x=>x.leadership);
+  // Within customer bubbles, draw larger ones first and smaller ones last/on top.
+  const d=[...APJC_CUSTOMERS].sort((a,b)=>b.size-a.size);
   traces.push({
     type:'scattergeo',
-    mode:'markers+text',
-    name:'Local market leadership',
-    lat:leaders.map(x=>x.lat),
-    lon:leaders.map(x=>x.lon),
-    text:leaders.map(x=>'★'),
-    textfont:{size:17,color:'#6b3df4'},
-    textposition:'top center',
-    hovertext:leaders.map(x=>`<b>${x.city} leadership + delivery hub</b><br>${x.region}<br>${x.n} resources<br>${x.role}`),
-    hovertemplate:'%{hovertext}<extra></extra>',
+    mode:'markers',
+    name:'Customers',
+    lat:d.map(x=>x.lat),
+    lon:d.map(x=>x.lon),
+    text:d.map(x=>`<b>${x.name}</b><br>${x.city}, ${x.country}<br>Region: ${x.region}<br>Tier: ${x.tier}<br>Business scale: ${x.scale}<br>DEM/RUM fit: ${x.dem}<br>Business Insights fit: ${x.bi}<br>${x.signal}`),
+    hovertemplate:'%{text}<extra></extra>',
     marker:{
-      symbol:'diamond',
-      size:leaders.map(x=>15+x.n*5),
-      color:'#22c7e8',
-      opacity:.98,
-      line:{color:'#6b3df4',width:3}
+      size:d.map(x=>x.size),
+      color:d.map(x=>tierColours[x.tier]),
+      opacity:.84,
+      line:{width:0}
     }
   });
 
@@ -522,13 +502,68 @@ function buildApjcMap(){
       oceancolor:'#fbfaff',
       showcountries:true,
       countrycolor:'#d6d0e7',
-      lonaxis:{range:[65,180]},
-      lataxis:{range:[-48,48]},
+      lonaxis:{range:[60,180]},
+      lataxis:{range:[-50,55]},
       bgcolor:'#fbfaff'
     }
   };
-  Plotly.newPlot('apjcMap',traces,layout,{responsive:true,displayModeBar:false});
+  Plotly.newPlot('apjcMap',traces,layout,{responsive:true,displayModeBar:false,scrollZoom:true});
 }
 buildApjcMap();
+const apjcMapEl=document.getElementById('apjcMap');
+if(apjcMapEl){
+  const APJC_LON=[60,180], APJC_LAT=[-50,55];
+  let clamping=false;
+
+  apjcMapEl.on('plotly_relayout',function(ev){
+    if(clamping) return;
+
+    // Plotly geo zoom/pan can update longitude/latitude ranges.
+    const lon0=ev['geo.lonaxis.range[0]'];
+    const lon1=ev['geo.lonaxis.range[1]'];
+    const lat0=ev['geo.lataxis.range[0]'];
+    const lat1=ev['geo.lataxis.range[1]'];
+
+    const update={};
+    let needsClamp=false;
+
+    if(lon0!==undefined && lon1!==undefined){
+      // Allow narrower ranges (zoom in), but never wider than APJC.
+      const width=lon1-lon0;
+      const maxWidth=APJC_LON[1]-APJC_LON[0];
+      if(width>maxWidth || lon0<APJC_LON[0] || lon1>APJC_LON[1]){
+        const clampedWidth=Math.min(width,maxWidth);
+        let centre=(lon0+lon1)/2;
+        centre=Math.max(APJC_LON[0]+clampedWidth/2,Math.min(APJC_LON[1]-clampedWidth/2,centre));
+        update['geo.lonaxis.range']=[centre-clampedWidth/2,centre+clampedWidth/2];
+        needsClamp=true;
+      }
+    }
+
+    if(lat0!==undefined && lat1!==undefined){
+      const height=lat1-lat0;
+      const maxHeight=APJC_LAT[1]-APJC_LAT[0];
+      if(height>maxHeight || lat0<APJC_LAT[0] || lat1>APJC_LAT[1]){
+        const clampedHeight=Math.min(height,maxHeight);
+        let centre=(lat0+lat1)/2;
+        centre=Math.max(APJC_LAT[0]+clampedHeight/2,Math.min(APJC_LAT[1]-clampedHeight/2,centre));
+        update['geo.lataxis.range']=[centre-clampedHeight/2,centre+clampedHeight/2];
+        needsClamp=true;
+      }
+    }
+
+    // Double-click/autosize can try to reset to a wider/global view.
+    if(ev['geo.autorange']===true || ev['autosize']===true){
+      update['geo.lonaxis.range']=APJC_LON;
+      update['geo.lataxis.range']=APJC_LAT;
+      needsClamp=true;
+    }
+
+    if(needsClamp){
+      clamping=true;
+      Plotly.relayout(apjcMapEl,update).finally(()=>{clamping=false;});
+    }
+  });
+}
 
 </script></body></html>
