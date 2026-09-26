@@ -129,7 +129,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{background:#f0edff;t
 </style></head><body>
 <header class="hero"><div class="wrap">
 <div class="report-meta">
-  <span>Working report · v0.27 · 26-Sep-2026</span>
+  <span>Working report · v0.28 · 26-Sep-2026</span>
   <a href="https://www.dynatrace.com/" target="_blank" rel="noopener">Dynatrace | Observability built for the age of AI</a>
 </div>
 <h1>Dynatrace APAC Business Insights Growth Strategy</h1>
@@ -491,15 +491,16 @@ function buildApjcMap(){
     type:'scattergeo',
     mode:'markers',
     name:'Singapore resource hub',
-    lat:singaporeHub.map(x=>x.lat),
-    lon:singaporeHub.map(x=>x.lon),
+    // Slight visual offset keeps the hub distinct from the overlapping Synapxe customer bubble.
+    lat:singaporeHub.map(x=>x.lat+0.28),
+    lon:singaporeHub.map(x=>x.lon+0.42),
     text:singaporeHub.map(x=>`<b>${x.city} resource hub</b><br>${x.region}<br>${x.n} resources<br>${x.role}`),
     hovertemplate:'%{text}<extra></extra>',
     marker:{
       symbol:'diamond',
-      size:singaporeHub.map(x=>14+x.n*4),
+      size:singaporeHub.map(x=>18+x.n*4),
       color:'#22c7e8',
-      opacity:.95,
+      opacity:1,
       line:{width:0}
     }
   });
