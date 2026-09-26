@@ -126,10 +126,26 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{background:#f0edff;t
   #apjcMap{height:520px}
 }
 
+
+.scope-matrix-wrap{overflow-x:auto;margin-top:10px}
+.scope-matrix{min-width:1120px;font-size:12px;table-layout:fixed}
+.scope-matrix th,.scope-matrix td{vertical-align:middle}
+.scope-matrix th.scope-map-col,.scope-matrix td.scope-map-col{width:142px;padding:6px}
+.scope-matrix th.scope-lead-col{width:230px}
+.scope-map{width:128px;height:78px;display:block;margin:auto;background:transparent}
+.scope-map .scope-country{fill:#8f4dff;fill-opacity:.72;stroke:none}
+.scope-map .scope-mgr-ring{fill:#fff;stroke:#22c7e8;stroke-width:2}
+.scope-map .scope-mgr-dot{fill:#22c7e8}
+.scope-map .scope-mgr-text{font:800 6px Aptos,Segoe UI,Arial,sans-serif;fill:#24124e}
+.scope-map-legend{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin:7px 0 12px;font-size:10px;color:#667085}
+.scope-map-legend span{display:inline-flex;gap:5px;align-items:center}
+.scope-swatch{width:9px;height:9px;border-radius:50%;display:inline-block;background:#8f4dff}
+.scope-mgr{width:9px;height:9px;border-radius:50%;display:inline-block;background:#22c7e8;border:2px solid white;outline:1px solid #22c7e8}
+
 </style></head><body>
 <header class="hero"><div class="wrap">
 <div class="report-meta">
-  <span>Working report · v0.38 · 26-Sep-2026</span>
+  <span>Working report · v0.42 · 26-Sep-2026</span>
   <a href="https://www.dynatrace.com/" target="_blank" rel="noopener">Dynatrace | Observability built for the age of AI</a>
 </div>
 <h1>Dynatrace APAC Business Insights Growth Strategy</h1>
@@ -475,50 +491,53 @@ Dynatrace APAC BI Team Manager Practical (provided case study) ·
   <small>Weighted fit is shown as a whole-number score out of 100: ((Culture × 40) + (Language × 35) + (Timezone × 25)) ÷ 5. Culture and language are weighted more heavily because timezone inconvenience can usually be managed more easily than weak local communication or relationship fit.</small>
 </div>
 
-<table>
-<thead>
+<div class="scope-matrix-wrap"><table class="scope-matrix">
+<thead><tr>
+<th class="scope-map-col">Focus map</th>
+<th class="scope-lead-col">Leadership scope</th>
+<th>Cultural / business fit<br><small>1–5</small></th>
+<th>Language fit<br><small>1–5</small></th>
+<th>Timezone overlap<br><small>1–5</small></th>
+<th>Weighted fit<br><small>/100</small></th>
+<th>Reasoning</th>
+</tr></thead><tbody>
 <tr>
-  <th>Leadership scope</th>
-  <th>Cultural / business fit<br><small>1–5</small></th>
-  <th>Language fit<br><small>1–5</small></th>
-  <th>Timezone overlap<br><small>1–5</small></th>
-  <th>Weighted fit<br><small>/100</small></th>
-  <th>Reasoning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td><b>Sydney Manager → ANZ only</b></td>
-  <td><b>5</b></td><td><b>5</b></td><td><b>5</b></td><td><b>100</b></td>
-  <td>Native operating environment, no material language barrier and full working-day alignment.</td>
-</tr>
-<tr>
-  <td><b>Sydney Manager → ANZ + Japan + South Korea</b></td>
-  <td><b>3</b></td><td><b>3</b></td><td><b>5</b></td><td><b>70</b></td>
-  <td>Timezone is excellent, but Japan and Korea both have distinct relationship and business-etiquette requirements. Japan has materially lower English proficiency; Korea is stronger but Korean remains the accepted business language.</td>
+<td class="scope-map-col"><svg class="scope-map" viewBox="0 0 128 78" role="img" aria-label="Scope: AU, NZ; manager: Sydney"><path class="scope-country" d="M67 42 L73 38 L80 40 L88 39 L95 43 L101 47 L100 53 L95 57 L87 59 L80 58 L73 55 L68 49 Z"/><path class="scope-country" d="M91 60 L95 62 L92 65 L88 63 Z"/><path class="scope-country" d="M109 55 L112 58 L110 61 L107 59 Z"/><path class="scope-country" d="M114 62 L117 65 L115 69 L112 66 Z"/><circle class="scope-mgr-ring" cx="89" cy="50" r="4.5"/><circle class="scope-mgr-dot" cx="89" cy="50" r="2.7"/><title>Scope: AU, NZ; manager: Sydney</title></svg></td>
+<td><b>Sydney Manager → ANZ only</b></td>
+<td><b>5</b></td><td><b>5</b></td><td><b>5</b></td><td><b>100</b></td>
+<td>Native operating environment, no material language barrier and full working-day alignment.</td>
 </tr>
 <tr>
-  <td><b>Sydney Manager → ANZ + India + ASEAN</b></td>
-  <td><b>3</b></td><td><b>4</b></td><td><b>3</b></td><td><b>67</b></td>
-  <td>Enterprise English is generally workable in India and Singapore, but India and ASEAN are culturally diverse and Sydney-to-India overlap is materially weaker. This creates the greatest span-of-control risk for the existing ANZ Manager.</td>
+<td class="scope-map-col"><svg class="scope-map" viewBox="0 0 128 78" role="img" aria-label="Scope: AU, NZ, JP, KR; manager: Sydney"><path class="scope-country" d="M67 42 L73 38 L80 40 L88 39 L95 43 L101 47 L100 53 L95 57 L87 59 L80 58 L73 55 L68 49 Z"/><path class="scope-country" d="M91 60 L95 62 L92 65 L88 63 Z"/><path class="scope-country" d="M109 55 L112 58 L110 61 L107 59 Z"/><path class="scope-country" d="M114 62 L117 65 L115 69 L112 66 Z"/><path class="scope-country" d="M92 17 L95 20 L94 24 L97 28 L95 32 L92 29 L93 25 L90 22 Z"/><path class="scope-country" d="M98 21 L101 24 L100 28 L97 26 Z"/><path class="scope-country" d="M84 21 L87 24 L86 28 L83 27 L82 23 Z"/><circle class="scope-mgr-ring" cx="89" cy="50" r="4.5"/><circle class="scope-mgr-dot" cx="89" cy="50" r="2.7"/><title>Scope: AU, NZ, JP, KR; manager: Sydney</title></svg></td>
+<td><b>Sydney Manager → ANZ + Japan + South Korea</b></td>
+<td><b>3</b></td><td><b>3</b></td><td><b>5</b></td><td><b>70</b></td>
+<td>Timezone is excellent, but Japan and Korea both have distinct relationship and business-etiquette requirements. Japan has materially lower English proficiency; Korea is stronger but Korean remains the accepted business language.</td>
 </tr>
 <tr>
-  <td><b>Singapore Manager → ASEAN + India</b></td>
-  <td><b>4</b></td><td><b>5</b></td><td><b>5</b></td><td><b>92</b></td>
-  <td>Singapore is an established Southeast Asian business hub, English is a business language, and timezone overlap with ASEAN and India is strong. Cultural diversity across ASEAN and India prevents a perfect cultural-fit score.</td>
+<td class="scope-map-col"><svg class="scope-map" viewBox="0 0 128 78" role="img" aria-label="Scope: AU, NZ, IN, SG, MY, TH, VN, PH, ID; manager: Sydney"><path class="scope-country" d="M67 42 L73 38 L80 40 L88 39 L95 43 L101 47 L100 53 L95 57 L87 59 L80 58 L73 55 L68 49 Z"/><path class="scope-country" d="M91 60 L95 62 L92 65 L88 63 Z"/><path class="scope-country" d="M109 55 L112 58 L110 61 L107 59 Z"/><path class="scope-country" d="M114 62 L117 65 L115 69 L112 66 Z"/><path class="scope-country" d="M19 24 L26 22 L31 26 L34 33 L31 39 L27 45 L29 51 L24 55 L21 49 L18 43 L14 38 L15 30 Z"/><circle class="scope-country" cx="44" cy="52" r="2"/><path class="scope-country" d="M39 41 L42 44 L43 49 L41 53 L39 49 Z"/><path class="scope-country" d="M45 54 L48 56 L47 60 L44 58 Z"/><path class="scope-country" d="M41 31 L45 35 L44 39 L46 44 L44 48 L42 43 L40 38 Z"/><path class="scope-country" d="M49 31 L52 35 L51 40 L53 45 L50 49 L49 44 L50 39 L48 35 Z"/><path class="scope-country" d="M60 33 L62 36 L61 39 L59 37 Z"/><path class="scope-country" d="M64 40 L66 43 L65 46 L63 44 Z"/><path class="scope-country" d="M39 58 L44 58 L49 59 L54 59 L60 60 L59 62 L53 61 L48 61 L43 60 Z"/><path class="scope-country" d="M49 63 L54 64 L58 64 L57 66 L52 65 Z"/><circle class="scope-mgr-ring" cx="89" cy="50" r="4.5"/><circle class="scope-mgr-dot" cx="89" cy="50" r="2.7"/><title>Scope: AU, NZ, IN, SG, MY, TH, VN, PH, ID; manager: Sydney</title></svg></td>
+<td><b>Sydney Manager → ANZ + India + ASEAN</b></td>
+<td><b>3</b></td><td><b>4</b></td><td><b>3</b></td><td><b>67</b></td>
+<td>Enterprise English is generally workable in India and Singapore, but India and ASEAN are culturally diverse and Sydney-to-India overlap is materially weaker. This creates the greatest span-of-control risk for the existing ANZ Manager.</td>
 </tr>
 <tr>
-  <td><b>Singapore Manager → Japan + South Korea</b></td>
-  <td><b>2</b></td><td><b>2</b></td><td><b>5</b></td><td><b>55</b></td>
-  <td>Timezone is excellent, but location in Singapore does not remove the Japanese/Korean language and relationship requirements. This option solves hours, not the harder customer-engagement constraints.</td>
+<td class="scope-map-col"><svg class="scope-map" viewBox="0 0 128 78" role="img" aria-label="Scope: IN, SG, MY, TH, VN, PH, ID; manager: Singapore"><path class="scope-country" d="M19 24 L26 22 L31 26 L34 33 L31 39 L27 45 L29 51 L24 55 L21 49 L18 43 L14 38 L15 30 Z"/><circle class="scope-country" cx="44" cy="52" r="2"/><path class="scope-country" d="M39 41 L42 44 L43 49 L41 53 L39 49 Z"/><path class="scope-country" d="M45 54 L48 56 L47 60 L44 58 Z"/><path class="scope-country" d="M41 31 L45 35 L44 39 L46 44 L44 48 L42 43 L40 38 Z"/><path class="scope-country" d="M49 31 L52 35 L51 40 L53 45 L50 49 L49 44 L50 39 L48 35 Z"/><path class="scope-country" d="M60 33 L62 36 L61 39 L59 37 Z"/><path class="scope-country" d="M64 40 L66 43 L65 46 L63 44 Z"/><path class="scope-country" d="M39 58 L44 58 L49 59 L54 59 L60 60 L59 62 L53 61 L48 61 L43 60 Z"/><path class="scope-country" d="M49 63 L54 64 L58 64 L57 66 L52 65 Z"/><circle class="scope-mgr-ring" cx="44" cy="52" r="4.5"/><circle class="scope-mgr-dot" cx="44" cy="52" r="2.7"/><title>Scope: IN, SG, MY, TH, VN, PH, ID; manager: Singapore</title></svg></td>
+<td><b>Singapore Manager → ASEAN + India</b></td>
+<td><b>4</b></td><td><b>5</b></td><td><b>5</b></td><td><b>92</b></td>
+<td>Singapore is an established Southeast Asian business hub, English is a business language, and timezone overlap with ASEAN and India is strong. Cultural diversity across ASEAN and India prevents a perfect cultural-fit score.</td>
 </tr>
 <tr>
-  <td><b>North Asia Manager → Japan + South Korea</b><br><small>selected for relevant local-market experience</small></td>
-  <td><b>5</b></td><td><b>4</b></td><td><b>5</b></td><td><b>93</b></td>
-  <td>Best structural fit for North Asia if recruited specifically for Japanese/Korean market experience. Language is scored 4 rather than 5 because one leader covering both markets is unlikely to have equally strong capability in both Japanese and Korean.</td>
+<td class="scope-map-col"><svg class="scope-map" viewBox="0 0 128 78" role="img" aria-label="Scope: JP, KR; manager: North Asia TBD"><path class="scope-country" d="M92 17 L95 20 L94 24 L97 28 L95 32 L92 29 L93 25 L90 22 Z"/><path class="scope-country" d="M98 21 L101 24 L100 28 L97 26 Z"/><path class="scope-country" d="M84 21 L87 24 L86 28 L83 27 L82 23 Z"/><circle class="scope-mgr-ring" cx="87" cy="22" r="4.5"/><circle class="scope-mgr-dot" cx="87" cy="22" r="2.7"/><text class="scope-mgr-text" x="93" y="18">TBD</text><title>Scope: JP, KR; manager: North Asia TBD</title></svg></td>
+<td><b>North Asia Manager → Japan + South Korea</b><br><small>selected for relevant local-market experience</small></td>
+<td><b>5</b></td><td><b>4</b></td><td><b>5</b></td><td><b>93</b></td>
+<td>Best structural fit for North Asia if recruited specifically for Japanese/Korean market experience. Language is scored 4 rather than 5 because one leader covering both markets is unlikely to have equally strong capability in both Japanese and Korean.</td>
 </tr>
-</tbody>
-</table>
+</tbody></table></div>
+<div class="scope-map-legend">
+<span><i class="scope-swatch"></i>shaded country = market in leadership scope</span>
+<span><i class="scope-mgr"></i>manager base</span>
+<span><b>TBD</b> = North Asia manager base not yet selected</span>
+<span>only countries in scope are shown</span>
+</div>
 
 <p><small><b>Important:</b> language scores reflect the enterprise-business environment, not general population ability. For example, U.S. Commercial Service guidance says English is common among Indian businesspeople and working professionals even though India's national EF EPI score is lower; Singapore uses English extensively in business. Japan and Korea require more deliberate local-language and cultural capability.</small></p>
 
