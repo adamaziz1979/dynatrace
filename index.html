@@ -106,14 +106,14 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{background:#f0edff;t
 .apjc-map-head{padding:14px 16px 8px}
 .apjc-map-head h3{margin:0 0 4px}
 .apjc-map-grid{display:grid;grid-template-columns:minmax(0,3fr) minmax(250px,1fr);gap:0;border-top:1px solid var(--line)}
-#apjcMap{height:590px;min-width:0}
+#apjcMap{height:590px;min-width:0;width:100%;margin:0;padding:0;background:#eeeaf6}
 .map-side{padding:14px;border-left:1px solid var(--line);background:linear-gradient(180deg,#fbfaff,#f5f1ff)}
 .map-side h4{margin:0 0 10px;color:var(--navy);font-size:13px}
 .map-region{border:1px solid #ddd8ee;background:white;border-radius:9px;padding:10px;margin:8px 0;font-size:11px;line-height:1.35}
 .map-region b{color:#37216d}
 .meter{height:6px;background:#ebe7f2;border-radius:999px;overflow:hidden;margin:4px 0 7px}
 .meter span{display:block;height:100%;background:linear-gradient(90deg,var(--purple),var(--cyan))}
-.map-canvas{min-width:0}.map-legend{display:flex;align-items:center;justify-content:flex-start;gap:12px;flex-wrap:nowrap;padding:8px 12px;font-size:10.5px;color:var(--muted);background:#fbfaff;border-bottom:1px solid var(--line);white-space:nowrap;overflow-x:auto}
+.map-canvas{min-width:0;margin:0;padding:0;overflow:hidden;background:#eeeaf6}.map-canvas .js-plotly-plot,.map-canvas .plot-container,.map-canvas .svg-container{width:100%!important;height:100%!important;margin:0!important;padding:0!important}.map-legend{display:flex;align-items:center;justify-content:flex-start;gap:12px;flex-wrap:nowrap;padding:8px 12px;font-size:10.5px;color:var(--muted);background:#fbfaff;border-bottom:1px solid var(--line);white-space:nowrap;overflow-x:auto}
 .map-legend span{display:inline-flex;align-items:center;gap:6px}
 .map-dot{width:10px;height:10px;border-radius:50%;display:inline-block}
 .map-diamond{width:10px;height:10px;display:inline-block;transform:rotate(45deg);background:var(--cyan);border:1px solid #24124e}
@@ -129,7 +129,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{background:#f0edff;t
 </style></head><body>
 <header class="hero"><div class="wrap">
 <div class="report-meta">
-  <span>Working report · v0.37 · 26-Sep-2026</span>
+  <span>Working report · v0.38 · 26-Sep-2026</span>
   <a href="https://www.dynatrace.com/" target="_blank" rel="noopener">Dynatrace | Observability built for the age of AI</a>
 </div>
 <h1>Dynatrace APAC Business Insights Growth Strategy</h1>
@@ -700,13 +700,13 @@ function buildApjcMap(){
 
   const layout={
     margin:{l:0,r:0,t:0,b:0},
-    paper_bgcolor:'#fbfaff',
-    plot_bgcolor:'#fbfaff',
+    paper_bgcolor:'#eeeaf6',
+    plot_bgcolor:'#eeeaf6',
     showlegend:false,
     hoverlabel:{bgcolor:'#17112f',font:{color:'#ffffff',size:12}},
     geo:{
       scope:'world',
-      projection:{type:'natural earth'},
+      projection:{type:'mercator'},
       showframe:false,
       showcoastlines:true,
       coastlinecolor:'#bcb5d0',
@@ -718,7 +718,7 @@ function buildApjcMap(){
       countrycolor:'#d6d0e7',
       lonaxis:{range:[60,180]},
       lataxis:{range:[-50,55]},
-      bgcolor:'#fbfaff'
+      bgcolor:'#eeeaf6'
     }
   };
   Plotly.newPlot('apjcMap',traces,layout,{responsive:true,displayModeBar:false,scrollZoom:true});
