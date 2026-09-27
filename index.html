@@ -159,7 +159,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{background:#f0edff;t
 </style></head><body>
 <header class="hero"><div class="wrap">
 <div class="report-meta">
-  <span>Working report · v0.50 · 27-Sep-2026</span>
+  <span>Working report · v0.51 · 27-Sep-2026</span>
   <a href="https://www.dynatrace.com/" target="_blank" rel="noopener">Dynatrace | Observability built for the age of AI</a>
 </div>
 <h1>Dynatrace APAC Business Insights Growth Strategy</h1>
@@ -787,7 +787,9 @@ function installResourceLabels(gd){
       const endX=edge+side*8;
       const elbowX=endX+side*12;
       const endY=top+Math.min(15,box.offsetHeight/3);
-      const route=`M${x},${y} L${elbowX},${endY} L${endX},${endY}`;
+      const route=resource.city==='Mumbai'
+        ? `M${x},${y} L${x},${top-10} L${x+12},${top-10}`
+        : `M${x},${y} L${elbowX},${endY} L${endX},${endY}`;
       line.setAttribute('d',route);
     });
   }
