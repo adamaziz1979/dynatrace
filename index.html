@@ -147,10 +147,19 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{background:#f0edff;t
 .scope-swatch{width:9px;height:9px;border-radius:50%;display:inline-block;background:#8f4dff}
 .scope-mgr{width:9px;height:9px;border-radius:50%;display:inline-block;background:#22c7e8;border:2px solid white;outline:1px solid #22c7e8}
 
+
+#apjcMap{position:relative}
+.resource-label-layer{position:absolute;inset:0;z-index:3;pointer-events:none;overflow:hidden}
+.resource-label-lines{position:absolute;inset:0;width:100%;height:100%}
+.resource-label-lines path{fill:none;stroke:#16859c;stroke-width:1.5;stroke-linejoin:round}
+.resource-label{position:absolute;box-sizing:border-box;width:160px;padding:7px 9px;background:rgba(255,255,255,.97);border:1px solid #77cddd;border-left:3px solid #22c7e8;border-radius:7px;box-shadow:0 2px 8px #24124e18;color:#24124e;font-size:10px;line-height:1.4}
+.resource-label strong{display:block;font-size:11px;margin-bottom:3px}
+.resource-label span{display:block;color:#514b65}
+@media(max-width:600px){.resource-label{width:130px;padding:5px 7px;font-size:9px}.resource-label strong{font-size:10px}}
 </style></head><body>
 <header class="hero"><div class="wrap">
 <div class="report-meta">
-  <span>Working report · v0.48 · 27-Sep-2026</span>
+  <span>Working report · v0.50 · 27-Sep-2026</span>
   <a href="https://www.dynatrace.com/" target="_blank" rel="noopener">Dynatrace | Observability built for the age of AI</a>
 </div>
 <h1>Dynatrace APAC Business Insights Growth Strategy</h1>
@@ -728,6 +737,72 @@ rf.onchange=tf.onchange=q.oninput=f;
 const APAC_CUSTOMERS=[{"name": "Village Roadshow", "region": "ANZ", "country": "Australia", "city": "Melbourne", "lat": -37.8136, "lon": 144.9631, "tier": "T1", "scale": "Medium", "size": 22, "dem": "High", "bi": "High", "signal": "Digital ticketing; ~$5m revenue protected."}, {"name": "Macquarie Bank", "region": "ANZ", "country": "Australia", "city": "Sydney", "lat": -33.8688, "lon": 151.2093, "tier": "T1", "scale": "Large", "size": 28, "dem": "Very high", "bi": "Very high", "signal": "2.2m customers; critical digital banking journeys."}, {"name": "BNZ", "region": "ANZ", "country": "New Zealand", "city": "Auckland", "lat": -36.8485, "lon": 174.7633, "tier": "T1", "scale": "Large", "size": 27, "dem": "Very high", "bi": "Very high", "signal": "1.2m customers; 85 apps; 2,500+ services."}, {"name": "RWWA", "region": "ANZ", "country": "Australia", "city": "Perth", "lat": -31.9523, "lon": 115.8613, "tier": "T1", "scale": "Medium", "size": 23, "dem": "Very high", "bi": "High", "signal": "Real-time wagering and transaction-sensitive customer journeys."}, {"name": "Horizon Power", "region": "ANZ", "country": "Australia", "city": "Perth", "lat": -31.63, "lon": 116.15, "tier": "T2", "scale": "Medium", "size": 20, "dem": "Medium", "bi": "Medium", "signal": "Strong service outcomes; less direct digital-commerce evidence."}, {"name": "IP Australia", "region": "ANZ", "country": "Australia", "city": "Canberra", "lat": -35.2809, "lon": 149.13, "tier": "T2", "scale": "Medium", "size": 22, "dem": "High", "bi": "Medium", "signal": "~800k online transactions/year; 99% digital service delivery."}, {"name": "Shriram Capital", "region": "India", "country": "India", "city": "Chennai", "lat": 13.0827, "lon": 80.2707, "tier": "T1", "scale": "Large", "size": 28, "dem": "High", "bi": "High", "signal": "Large regulated financial-services footprint."}, {"name": "Bajaj Allianz Life Insurance", "region": "India", "country": "India", "city": "Pune", "lat": 18.5204, "lon": 73.8567, "tier": "T1", "scale": "Large", "size": 28, "dem": "High", "bi": "High", "signal": "High-volume regulated customer journeys."}, {"name": "Synapxe / IHiS", "region": "ASEAN + South Korea", "country": "Singapore", "city": "Singapore", "lat": 1.3521, "lon": 103.8198, "tier": "T1", "scale": "Large", "size": 28, "dem": "High", "bi": "High", "signal": "570 backend apps; up to 80k vaccinations/day."}, {"name": "CIMB Bank", "region": "ASEAN + South Korea", "country": "Malaysia", "city": "Kuala Lumpur", "lat": 3.139, "lon": 101.6869, "tier": "T1", "scale": "Very large", "size": 36, "dem": "Very high", "bi": "Very high", "signal": "30m+ customers; hundreds of millions of interactions."}, {"name": "KBTG / KBank", "region": "ASEAN + South Korea", "country": "Thailand", "city": "Bangkok", "lat": 13.7563, "lon": 100.5018, "tier": "T1", "scale": "Very large", "size": 35, "dem": "Very high", "bi": "Very high", "signal": "23m+ customers; 400+ apps."}, {"name": "PayMaya", "region": "ASEAN + South Korea", "country": "Philippines", "city": "Manila", "lat": 14.5995, "lon": 120.9842, "tier": "T1", "scale": "Large", "size": 29, "dem": "Very high", "bi": "High", "signal": "Digital wallet and mobile-payment journeys."}, {"name": "Mizuho Securities Asia", "region": "ASEAN + South Korea", "country": "South Korea", "city": "Seoul", "lat": 37.5665, "lon": 126.978, "tier": "T2", "scale": "Large", "size": 26, "dem": "Medium", "bi": "Medium", "signal": "Regional securities account; Seoul presence."}, {"name": "Globeride", "region": "Japan", "country": "Japan", "city": "Tokyo", "lat": 35.71, "lon": 139.78, "tier": "T1", "scale": "Medium", "size": 22, "dem": "Very high", "bi": "High", "signal": "Explicit RUM/UX health dashboards and e-commerce."}, {"name": "DeNA", "region": "Japan", "country": "Japan", "city": "Tokyo", "lat": 35.66, "lon": 139.7, "tier": "T1", "scale": "Large", "size": 29, "dem": "Very high", "bi": "High", "signal": "Digital-native games, streaming, sports and healthcare portfolio."}, {"name": "Fujitsu", "region": "Japan", "country": "Japan", "city": "Kawasaki", "lat": 35.5308, "lon": 139.7029, "tier": "T3", "scale": "Very large", "size": 36, "dem": "Medium", "bi": "Low–Medium", "signal": "Very large enterprise; public Dynatrace use is mainly internal operations."}, {"name": "DNP Group", "region": "Japan", "country": "Japan", "city": "Tokyo", "lat": 35.69, "lon": 139.76, "tier": "T3", "scale": "Very large", "size": 34, "dem": "Medium", "bi": "Low–Medium", "signal": "Large diversified enterprise; current public story is operations-led."}];
 const APAC_RESOURCES=[{"city": "Sydney", "lat": -33.8688, "lon": 151.2093, "n": 4, "role": "Manager + Sr Analyst + 2× Sr Support", "leadership": true, "region": "ANZ"}, {"city": "Melbourne", "lat": -37.8136, "lon": 144.9631, "n": 1, "role": "Analyst", "leadership": false, "region": "ANZ"}, {"city": "Singapore", "lat": 1.3521, "lon": 103.8198, "n": 3, "role": "2× Sr Analyst + Analyst; no local Manager", "leadership": false, "region": "ASEAN + South Korea"}, {"city": "Delhi", "lat": 28.6139, "lon": 77.209, "n": 1, "role": "Lead Support", "leadership": false, "region": "India"}, {"city": "Mumbai", "lat": 19.076, "lon": 72.8777, "n": 1, "role": "Sr Analyst", "leadership": false, "region": "India"}];
 
+
+function installResourceLabels(gd){
+  const layer=document.createElement('div');
+  layer.className='resource-label-layer';
+  const ns='http://www.w3.org/2000/svg';
+  const lines=document.createElementNS(ns,'svg');
+  lines.classList.add('resource-label-lines');
+  lines.setAttribute('aria-hidden','true');
+  layer.appendChild(lines);
+  gd.appendChild(layer);
+  // Labels use projected geographic anchors rather than viewport percentages.
+  const items=APAC_RESOURCES.map(resource=>{
+    const box=document.createElement('div');
+    box.className='resource-label';
+    const title=document.createElement('strong');
+    title.textContent=`${resource.city} · ${resource.n} resource${resource.n===1?'':'s'}`;
+    const roles=document.createElement('span');roles.textContent=resource.role;
+    box.append(title,roles);layer.appendChild(box);
+    const line=document.createElementNS(ns,'path');lines.appendChild(line);
+    return {resource,box,line};
+  });
+  function update(){
+    const bounds=gd.getBoundingClientRect();
+    const groups=gd.querySelectorAll('.scatterlayer .trace');
+    const otherPoints=groups[0]?.querySelectorAll('path.point');
+    const singaporePoint=groups[2]?.querySelector('path.point');
+    const anchors=groups[3]?.querySelectorAll('path.point');
+    let otherIndex=0;
+    items.forEach(({resource,box,line},index)=>{
+      const point=resource.city==='Singapore'?singaporePoint:otherPoints?.[otherIndex++];
+      const anchor=anchors?.[index];
+      if(!point||!anchor){box.hidden=true;line.style.display='none';return;}
+      const rect=point.getBoundingClientRect();
+      const x=rect.x+rect.width/2-bounds.x,y=rect.y+rect.height/2-bounds.y;
+      const visible=rect.width>0&&x>=0&&x<=bounds.width&&y>=0&&y<=bounds.height;
+      box.hidden=!visible;line.style.display=visible?'':'none';
+      if(!visible)return;
+      const anchorRect=anchor.getBoundingClientRect();
+      const anchorX=anchorRect.x+anchorRect.width/2-bounds.x;
+      const anchorY=anchorRect.y+anchorRect.height/2-bounds.y;
+      const left=anchorX;
+      const top=anchorY;
+      box.style.left=left+'px';box.style.top=top+'px';
+      const right=left+box.offsetWidth,bottom=top+box.offsetHeight;
+      // Angled callout with a short horizontal shoulder, separated from the box.
+      const side=x<(left+right)/2?-1:1;
+      const edge=side<0?left:right;
+      const endX=edge+side*8;
+      const elbowX=endX+side*12;
+      const endY=top+Math.min(15,box.offsetHeight/3);
+      const route=`M${x},${y} L${elbowX},${endY} L${endX},${endY}`;
+      line.setAttribute('d',route);
+    });
+  }
+  let frame;
+  const schedule=()=>{cancelAnimationFrame(frame);frame=requestAnimationFrame(update);};
+  gd.on('plotly_afterplot',schedule);
+  gd.on('plotly_relayout',schedule);
+  gd.on('plotly_relayouting',schedule);
+  new ResizeObserver(schedule).observe(gd);
+  // Track Plotly's live point transforms during drag, as well as completed relayouts.
+  const scatter=gd.querySelector('.scatterlayer');
+  if(scatter)new MutationObserver(schedule).observe(scatter,{attributes:true,subtree:true,attributeFilter:['transform','d']});
+  schedule();
+}
+
 function buildApjcMap(){
   if(typeof Plotly==='undefined') return;
   const tierColours={T1:'#b6f23a',T2:'#8f4dff',T3:'#a6a1b3'};
@@ -790,6 +865,13 @@ function buildApjcMap(){
     }
   });
 
+  // Invisible projected points keep the callouts attached to open-water map positions.
+  const labelLocations={Sydney:[160,-16],Melbourne:[103,-44],Singapore:[136,12],Delhi:[84,40],Mumbai:[64,5]};
+  traces.push({type:'scattergeo',mode:'markers',name:'Resource label anchors',
+    lon:APAC_RESOURCES.map(r=>labelLocations[r.city][0]),
+    lat:APAC_RESOURCES.map(r=>labelLocations[r.city][1]),
+    marker:{size:1,color:'rgba(0,0,0,0)'},hoverinfo:'skip',showlegend:false});
+
   const layout={
     margin:{l:0,r:0,t:0,b:0},
     paper_bgcolor:'#eeeaf6',
@@ -813,7 +895,7 @@ function buildApjcMap(){
       bgcolor:'#eeeaf6'
     }
   };
-  Plotly.newPlot('apjcMap',traces,layout,{responsive:true,displayModeBar:false,scrollZoom:true});
+  Plotly.newPlot('apjcMap',traces,layout,{responsive:true,displayModeBar:false,scrollZoom:true}).then(installResourceLabels);
 }
 buildApjcMap();
 const apjcMapEl=document.getElementById('apjcMap');
@@ -873,5 +955,8 @@ if(apjcMapEl){
 }
 
 </script></body></html>
+
+
+
 
 
