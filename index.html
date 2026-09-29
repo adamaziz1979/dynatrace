@@ -156,10 +156,13 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{background:#f0edff;t
 .resource-label strong{display:block;font-size:11px;margin-bottom:3px}
 .resource-label span{display:block;color:#514b65}
 @media(max-width:600px){.resource-label{width:130px;padding:5px 7px;font-size:9px}.resource-label strong{font-size:10px}}
+
+.map-method{font-size:12px;line-height:1.6;padding:16px}.map-method h4{margin:0 0 8px;color:#24124e}.map-method p{margin:8px 0}.map-method li{margin:7px 0}.map-method details{margin:14px 0}.map-method summary{cursor:pointer;font-weight:700;color:#5c2fc4}.map-audit-scroll{overflow-x:auto;margin-top:10px}.map-audit-scroll table{font-size:11px}.footprint-frame{width:100%;height:590px;border:0;display:block;background:#eeeaf6}@media(max-width:600px){.footprint-frame{height:520px}}
+.apjc-map-head p{font-size:12px;line-height:1.55;margin:8px 0}.map-key{display:inline-flex;align-items:center;gap:5px}
 </style></head><body>
 <header class="hero"><div class="wrap">
 <div class="report-meta">
-  <span>Working report · v0.55 · 27-Sep-2026</span>
+  <span>Working report · v0.58 · 30-Sep-2026</span>
   <a href="https://www.dynatrace.com/" target="_blank" rel="noopener">Dynatrace | Observability built for the age of AI</a>
 </div>
 <h1>Dynatrace APAC Business Insights Growth Strategy</h1>
@@ -258,18 +261,14 @@ Dynatrace APAC BI Team Manager Practical (provided case study) ·
 
 <div class="apjc-map-panel">
   <div class="apjc-map-head">
-    <h3>APAC opportunity map · resources, DEM/RUM fit and Business Insights potential</h3>
-    <p><small>Customer bubbles are colour-coded by Tier and sized by an indicative <b>business-scale proxy</b> using public signals such as customer reach, transaction/service scale and enterprise footprint. Resource markers use the case-study team footprint. This is a prioritisation visual, not a valuation model.</small></p>
-  </div>
+<h3>APAC opportunity map · resources, DEM/RUM fit and Business Insights potential</h3>
+<p><b>What does this show?</b> Selected public customer examples and their potential fit for Business Insights—not Dynatrace’s full customer base.</p>
+<p><b>Data Sources:</b> <a href="#tbl">Dynatrace customer and partner stories linked below</a>, plus the supplied APAC case study. Prioritisation tiers and business-scale sizes are report judgements based on the public evidence.</p>
+<p><b>Legend:</b> <span class="map-key"><i class="map-dot" style="background:#b6f23a"></i>Tier 1</span> · <span class="map-key"><i class="map-dot" style="background:#8f4dff"></i>Tier 2</span> · <span class="map-key"><i class="map-dot" style="background:#a6a1b3"></i>Tier 3</span>. Larger bubble = greater indicative business scale; not an account count. <span class="map-key"><i class="map-diamond"></i>Resource hub</span>.</p>
+</div>
   <div class="apjc-map-grid">
     <div class="map-canvas">
-      <div class="map-legend">
-        <span><i class="map-dot" style="background:#b6f23a"></i>Tier 1 customer</span>
-        <span><i class="map-dot" style="background:#8f4dff"></i>Tier 2 customer</span>
-        <span><i class="map-dot" style="background:#a6a1b3"></i>Tier 3 customer</span>
-        <span><i class="map-diamond"></i>Current delivery resource hub</span>
-        <span>Bubble size = indicative business scale</span>
-      </div>
+
       <div id="apjcMap" aria-label="APAC Dynatrace Business Insights opportunity map"></div>
     </div>
     <aside class="map-side">
@@ -280,7 +279,391 @@ Dynatrace APAC BI Team Manager Practical (provided case study) ·
       <div class="map-region"><b>Japan · 0 current team resources</b><br>Distinct language / market model<br>DEM/RUM fit: High<div class="meter"><span style="width:82%"></span></div>Business Insights fit: Medium–High<div class="meter"><span style="width:66%"></span></div><small>High-value long-term market; validate repeatable pipeline before dedicated team build-out.</small></div>
     </aside>
   </div>
-  <div class="map-note"><b>Reading the map:</b> large Tier-1 bubbles close to an existing delivery base are the strongest public-account candidates to validate internally for short-term conversion or expansion. Large bubbles without local leadership or delivery depth are longer-term market-development opportunities. DEM/RUM and Business Insights fit scores are directional hypotheses based on the public customer evidence in this report and should be validated against internal telemetry, account plans and CRM data.</div>
+
+</div>
+
+<div class="apjc-map-panel" id="estimated-footprint-map">
+<div class="apjc-map-head">
+<h3>Estimated APAC installed customer footprint · country planning estimates</h3>
+<p><b>What does this show?</b> Estimated Dynatrace platform accounts by country/market—not confirmed counts or paid Business Insights customers. The <b>~320 APAC planning estimate</b> sits between two benchmarks: <b>~250</b> from 698 APAC website detections × the global ratio of 4,100 customers to 11,533 detected sites (~0.36), and <b>~410</b> from APAC’s 10% revenue share × 4,100 customers, assuming global-average revenue per customer. These give a broad <b>~250–410 planning range</b>.</p>
+<p><b>Data Sources:</b> <a href="https://trends.builtwith.com/websitelist/Dynatrace/APAC" target="_blank" rel="noopener">BuiltWith detection counts</a>, calibrated against <a href="https://ir.dynatrace.com/sec-filings/all-sec-filings/content/0001773383-26-000019/dt-20260331.htm" target="_blank" rel="noopener">Dynatrace’s FY26 global customer total and APAC revenue share</a>. Country estimates follow each market’s detection share, with planning rounding. Uses the 27 September working snapshot; detections are websites, not verified accounts.</p>
+<p><b>Legend:</b> <span class="map-key"><i class="map-dot" style="background:#b6f23a"></i>Country/market estimate</span> · Bubble area scales with estimated accounts · <span class="map-key"><i class="map-diamond"></i>Resource hub</span>. Country-unallocated “Other APAC” is excluded; 0–1 estimates use a midpoint for display. Sizes are not comparable with the first map.</p>
+</div>
+<iframe title="Estimated Dynatrace customer footprint map" class="footprint-frame" srcdoc="&lt;!doctype html&gt;&lt;html&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;&lt;title&gt;Estimated Dynatrace customer footprint — preview&lt;/title&gt;&lt;style&gt;
+:root{--ink:#1b1538;--muted:#67617f;--line:#ddd8ee;--navy:#24124e;--blue:#6b3df4;--purple:#6b3df4;--violet:#8f4dff;--cyan:#22c7e8;--lime:#b6f23a;--deep:#09091c;--bg:#f7f6fb}
+*{box-sizing:border-box}body{margin:0;font-family:Aptos,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+.hero{background:linear-gradient(120deg,#09091c 0%,#24104f 45%,#5a2dd7 78%,#8f4dff 100%);color:white;padding:46px 24px;border-bottom:4px solid var(--lime)}.wrap{max-width:1180px;margin:auto}
+h1{font-size:38px;margin:6px 0}h2{color:var(--navy);margin-top:0}h3{color:#5c2fc4}
+nav{position:sticky;top:0;background:#fffffff7;border-bottom:1px solid var(--line);z-index:5}nav .wrap{display:flex;gap:18px;padding:10px 20px;overflow:auto}nav a{text-decoration:none;color:#393052;font-weight:700;white-space:nowrap;font-size:13px}
+main{padding:26px 20px 60px}section{background:white;border:1px solid var(--line);border-radius:14px;padding:24px;margin-bottom:24px;box-shadow:0 3px 12px #1b27420a}
+.notice{background:#ffffff16;border-left:4px solid #b6f23a;padding:12px;margin-top:16px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.box{background:#fbfaff;border:1px solid var(--line);border-radius:10px;padding:15px}.quote{border-left:4px solid var(--blue);background:#f3efff;padding:14px;font-weight:700}
+.cards{display:grid;grid-template-columns:repeat(6,1fr);gap:9px;margin:14px 0}.card{border:1px solid var(--line);border-radius:9px;padding:11px;background:#fafcff}.big{font-size:25px;font-weight:800;color:#6b3df4}.mini,small{color:var(--muted);font-size:11px}
+table{width:100%;border-collapse:collapse;font-size:13px}th{background:#f0edff;text-align:left;padding:9px;color:#2f1b64}td{padding:9px;border-bottom:1px solid #e7ebf0;vertical-align:top}td a{color:#6b3df4;font-weight:700;text-decoration:none}
+.badge{padding:3px 8px;border-radius:999px;font-weight:800;font-size:12px}.t1{background:#effbd8;color:#315c00}.t2{background:#efe7ff;color:#5d31bd}.t3{background:#eef0f5;color:#5f5874}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}select,input{padding:9px;border:1px solid #cbd5e1;border-radius:7px;background:white}
+.warn{background:#f7f2ff;border:1px solid #d8c9ff;border-radius:9px;padding:13px}.good{background:#f1fbe6;border:1px solid #cbeaa3;border-radius:9px;padding:13px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}ul{padding-left:20px}
+
+
+.refs-small{margin-top:14px;padding-top:9px;border-top:1px dashed #d8d2ea;font-size:11px;color:#667085}
+
+.compact-heading{font-size:15px;margin-top:12px;margin-bottom:6px}
+
+#exec,#case{padding:18px 20px}
+#exec h2,#case h2{font-size:19px;margin-bottom:8px}
+#exec h3,#case h3{font-size:15px;margin-top:12px;margin-bottom:6px}
+#exec .grid,#case .grid,#case .two{gap:10px}
+#exec .box,#case .box{padding:11px 13px;font-size:12.5px}
+#exec .box p,#case .box p,#case li{margin-top:5px;margin-bottom:6px}
+#exec .quote{padding:10px 12px;font-size:12.5px;margin:10px 0}
+#exec .refs-small,#case .refs-small{margin-top:10px;padding-top:7px;font-size:10px}
+#case table{font-size:12px}
+#case th,#case td{padding:7px}
+
+.compact-section-title{font-size:21px;margin-bottom:10px}
+.region-wrap{margin:11px 0}
+.region-note{margin:4px 0 0 122px;font-size:11px;color:#667085;line-height:1.35}
+@media(max-width:850px){.region-note{margin-left:0}}
+
+.refs-small b{color:#5f5874}
+.refs-small a{color:#6b3df4;text-decoration:none}
+.refs-small a:hover{text-decoration:underline}
+
+
+
+
+.region-matrix-cell{
+  vertical-align:top;
+  background:#f3efff;
+  color:#2f1b64;
+  font-weight:800;
+  border-right:1px solid #d9d0f3;
+  white-space:nowrap;
+}
+
+.region-group td{
+  background:#f3efff;
+  color:#2f1b64;
+  font-weight:800;
+  border-top:2px solid #d9d0f3;
+  border-bottom:1px solid #d9d0f3;
+  padding:6px 9px;
+}
+
+.apjc-divider td{
+  padding:5px 10px;
+  background:#faf9fd;
+  border-top:1px solid #d8d2ea;
+  color:#667085;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.02em;
+  text-transform:none;
+}
+.region-viz-divider{
+  margin:5px 0 14px;
+  padding-top:5px;
+  border-top:1px solid #d8d2ea;
+  font-size:9px;
+  font-weight:700;
+  color:#667085;
+  text-transform:none;
+  letter-spacing:.02em;
+}
+
+.region-viz{margin:18px 0 6px}
+.region-row{display:grid;grid-template-columns:110px 1fr 42px;gap:12px;align-items:center;margin:11px 0}
+.region-name{font-weight:800;color:#2f1b64}
+.region-track{height:26px;background:#eeeaf6;border-radius:7px;overflow:hidden;display:flex;max-width:100%}
+.seg{height:100%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;min-width:0}
+.seg.t1s{background:#b6f23a;color:#294600}
+.seg.t2s{background:#a987ff;color:#271451}
+.seg.t3s{background:#cfd1db;color:#4e4860}
+.region-count{font-weight:800;color:#6b3df4;text-align:right}
+.legend{display:flex;gap:14px;flex-wrap:wrap;margin:10px 0 4px;font-size:12px;color:#5f5874}
+.legend span{display:inline-flex;gap:6px;align-items:center}
+.legend i{width:13px;height:13px;border-radius:3px;display:inline-block}
+
+@media(max-width:850px){.grid,.two{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}h1{font-size:30px}}
+
+.report-meta{display:flex;align-items:center;justify-content:space-between;gap:18px;text-transform:uppercase;letter-spacing:.12em;font-size:12px}
+.report-meta a{color:#dfffa0;text-decoration:none;font-weight:800;letter-spacing:.04em;text-transform:none}
+.report-meta a:hover{text-decoration:underline}
+#base .cards{grid-template-columns:repeat(5,1fr)}
+.apjc-map-panel{margin:18px 0 16px;border:1px solid var(--line);border-radius:12px;background:#fbfaff;overflow:hidden}
+.apjc-map-head{padding:14px 16px 8px}
+.apjc-map-head h3{margin:0 0 4px}
+.apjc-map-grid{display:grid;grid-template-columns:minmax(0,3fr) minmax(250px,1fr);gap:0;border-top:1px solid var(--line)}
+#apjcMap{height:590px;min-width:0;width:100%;margin:0;padding:0;background:#eeeaf6}
+.map-side{padding:14px;border-left:1px solid var(--line);background:linear-gradient(180deg,#fbfaff,#f5f1ff)}
+.map-side h4{margin:0 0 10px;color:var(--navy);font-size:13px}
+.map-region{border:1px solid #ddd8ee;background:white;border-radius:9px;padding:10px;margin:8px 0;font-size:11px;line-height:1.35}
+.map-region b{color:#37216d}
+.meter{height:6px;background:#ebe7f2;border-radius:999px;overflow:hidden;margin:4px 0 7px}
+.meter span{display:block;height:100%;background:linear-gradient(90deg,var(--purple),var(--cyan))}
+.map-canvas{min-width:0;margin:0;padding:0;overflow:hidden;background:#eeeaf6}.map-canvas .js-plotly-plot,.map-canvas .plot-container,.map-canvas .svg-container{width:100%!important;height:100%!important;margin:0!important;padding:0!important}.map-legend{display:flex;align-items:center;justify-content:flex-start;gap:12px;flex-wrap:nowrap;padding:8px 12px;font-size:10.5px;color:var(--muted);background:#fbfaff;border-bottom:1px solid var(--line);white-space:nowrap;overflow-x:auto}
+.map-legend span{display:inline-flex;align-items:center;gap:6px}
+.map-dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.map-diamond{width:10px;height:10px;display:inline-block;transform:rotate(45deg);background:var(--cyan);border:1px solid #24124e}
+.map-note{padding:0 16px 14px;color:var(--muted);font-size:10.5px;line-height:1.35}
+@media(max-width:900px){
+  .report-meta{align-items:flex-start;flex-direction:column;gap:4px}
+  #base .cards{grid-template-columns:repeat(2,1fr)}
+  .apjc-map-grid{grid-template-columns:1fr}
+  .map-side{border-left:0;border-top:1px solid var(--line)}
+  #apjcMap{height:520px}
+}
+
+
+.scope-matrix-wrap{overflow-x:auto;margin-top:10px}
+.scope-matrix{min-width:1000px;font-size:12px;table-layout:fixed}
+.scope-matrix th,.scope-matrix td{vertical-align:middle}
+.scope-matrix th.scope-map-col,.scope-matrix td.scope-map-col{width:142px;padding:6px}
+.scope-matrix th.scope-lead-col{width:190px}
+.scope-matrix th:nth-child(3){width:90px}
+.scope-matrix th:nth-child(4){width:80px}
+.scope-matrix th:nth-child(5){width:85px}
+.scope-matrix th:nth-child(6){width:75px}
+.scope-matrix th:nth-child(n+3):nth-child(-n+6),.scope-matrix td:nth-child(n+3):nth-child(-n+6){padding:8px 6px;text-align:center}
+.scope-map{width:128px;height:78px;display:block;margin:auto;background:transparent}
+.scope-map .scope-country{fill:#8f4dff;fill-opacity:.72;stroke:none}
+.scope-map .scope-mgr-ring{fill:#fff;stroke:#22c7e8;stroke-width:2}
+.scope-map .scope-mgr-dot{fill:#22c7e8}
+.scope-map .scope-mgr-text{font:800 6px Aptos,Segoe UI,Arial,sans-serif;fill:#24124e}
+.scope-map-legend{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin:7px 0 12px;font-size:10px;color:#667085}
+.scope-map-legend span{display:inline-flex;gap:5px;align-items:center}
+.scope-swatch{width:9px;height:9px;border-radius:50%;display:inline-block;background:#8f4dff}
+.scope-mgr{width:9px;height:9px;border-radius:50%;display:inline-block;background:#22c7e8;border:2px solid white;outline:1px solid #22c7e8}
+
+
+#apjcMap{position:relative}
+.resource-label-layer{position:absolute;inset:0;z-index:3;pointer-events:none;overflow:hidden}
+.resource-label-lines{position:absolute;inset:0;width:100%;height:100%}
+.resource-label-lines path{fill:none;stroke:#16859c;stroke-width:1.5;stroke-linejoin:round}
+.resource-label{position:absolute;box-sizing:border-box;width:160px;padding:7px 9px;background:rgba(255,255,255,.97);border:1px solid #77cddd;border-left:3px solid #22c7e8;border-radius:7px;box-shadow:0 2px 8px #24124e18;color:#24124e;font-size:10px;line-height:1.4}
+.resource-label strong{display:block;font-size:11px;margin-bottom:3px}
+.resource-label span{display:block;color:#514b65}
+@media(max-width:600px){.resource-label{width:130px;padding:5px 7px;font-size:9px}.resource-label strong{font-size:10px}}
+
+body{background:#fbfaff}.preview-map{max-width:1100px;margin:0 auto}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div class=&quot;preview-map&quot;&gt;&lt;div id=&quot;apjcMap&quot; aria-label=&quot;Estimated Dynatrace customer footprint preview&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;script src=&quot;https://cdn.plot.ly/plotly-2.35.2.min.js&quot;&gt;&lt;/script&gt;&lt;script&gt;const ESTIMATED_FOOTPRINT=[{&quot;country&quot;: &quot;Australia&quot;, &quot;estimate&quot;: 120, &quot;lon&quot;: 134, &quot;lat&quot;: -25, &quot;display&quot;: &quot;120&quot;}, {&quot;country&quot;: &quot;India&quot;, &quot;estimate&quot;: 36, &quot;lon&quot;: 79, &quot;lat&quot;: 22, &quot;display&quot;: &quot;36&quot;}, {&quot;country&quot;: &quot;Japan&quot;, &quot;estimate&quot;: 25, &quot;lon&quot;: 138, &quot;lat&quot;: 37, &quot;display&quot;: &quot;25&quot;}, {&quot;country&quot;: &quot;China&quot;, &quot;estimate&quot;: 23, &quot;lon&quot;: 104, &quot;lat&quot;: 35, &quot;display&quot;: &quot;23&quot;}, {&quot;country&quot;: &quot;Singapore&quot;, &quot;estimate&quot;: 16, &quot;lon&quot;: 103.8198, &quot;lat&quot;: 1.3521, &quot;display&quot;: &quot;16&quot;}, {&quot;country&quot;: &quot;New Zealand&quot;, &quot;estimate&quot;: 15, &quot;lon&quot;: 172, &quot;lat&quot;: -41, &quot;display&quot;: &quot;15&quot;}, {&quot;country&quot;: &quot;Philippines&quot;, &quot;estimate&quot;: 12, &quot;lon&quot;: 122, &quot;lat&quot;: 12, &quot;display&quot;: &quot;12&quot;}, {&quot;country&quot;: &quot;Hong Kong&quot;, &quot;estimate&quot;: 12, &quot;lon&quot;: 114.17, &quot;lat&quot;: 22.32, &quot;display&quot;: &quot;12&quot;}, {&quot;country&quot;: &quot;Vietnam&quot;, &quot;estimate&quot;: 11, &quot;lon&quot;: 107, &quot;lat&quot;: 16, &quot;display&quot;: &quot;11&quot;}, {&quot;country&quot;: &quot;Taiwan&quot;, &quot;estimate&quot;: 9, &quot;lon&quot;: 121, &quot;lat&quot;: 23.7, &quot;display&quot;: &quot;9&quot;}, {&quot;country&quot;: &quot;Malaysia&quot;, &quot;estimate&quot;: 7, &quot;lon&quot;: 102, &quot;lat&quot;: 4, &quot;display&quot;: &quot;7&quot;}, {&quot;country&quot;: &quot;Thailand&quot;, &quot;estimate&quot;: 7, &quot;lon&quot;: 101, &quot;lat&quot;: 15, &quot;display&quot;: &quot;7&quot;}, {&quot;country&quot;: &quot;Indonesia&quot;, &quot;estimate&quot;: 7, &quot;lon&quot;: 118, &quot;lat&quot;: -3, &quot;display&quot;: &quot;7&quot;}, {&quot;country&quot;: &quot;South Korea&quot;, &quot;estimate&quot;: 6, &quot;lon&quot;: 128, &quot;lat&quot;: 36, &quot;display&quot;: &quot;6&quot;}, {&quot;country&quot;: &quot;Pakistan&quot;, &quot;estimate&quot;: 1, &quot;lon&quot;: 69, &quot;lat&quot;: 30, &quot;display&quot;: &quot;1&quot;}, {&quot;country&quot;: &quot;Bangladesh&quot;, &quot;estimate&quot;: 1, &quot;lon&quot;: 90, &quot;lat&quot;: 24, &quot;display&quot;: &quot;1&quot;}, {&quot;country&quot;: &quot;Cambodia&quot;, &quot;estimate&quot;: 1, &quot;lon&quot;: 105, &quot;lat&quot;: 12.5, &quot;display&quot;: &quot;1&quot;}, {&quot;country&quot;: &quot;Sri Lanka&quot;, &quot;estimate&quot;: 0.5, &quot;lon&quot;: 80.7, &quot;lat&quot;: 7.9, &quot;display&quot;: &quot;0\u20131&quot;}, {&quot;country&quot;: &quot;Fiji&quot;, &quot;estimate&quot;: 0.5, &quot;lon&quot;: 178, &quot;lat&quot;: -17.7, &quot;display&quot;: &quot;0\u20131&quot;}];
+const APAC_CUSTOMERS=[{&quot;name&quot;: &quot;Village Roadshow&quot;, &quot;region&quot;: &quot;ANZ&quot;, &quot;country&quot;: &quot;Australia&quot;, &quot;city&quot;: &quot;Melbourne&quot;, &quot;lat&quot;: -37.8136, &quot;lon&quot;: 144.9631, &quot;tier&quot;: &quot;T1&quot;, &quot;scale&quot;: &quot;Medium&quot;, &quot;size&quot;: 22, &quot;dem&quot;: &quot;High&quot;, &quot;bi&quot;: &quot;High&quot;, &quot;signal&quot;: &quot;Digital ticketing; ~$5m revenue protected.&quot;}, {&quot;name&quot;: &quot;Macquarie Bank&quot;, &quot;region&quot;: &quot;ANZ&quot;, &quot;country&quot;: &quot;Australia&quot;, &quot;city&quot;: &quot;Sydney&quot;, &quot;lat&quot;: -33.8688, &quot;lon&quot;: 151.2093, &quot;tier&quot;: &quot;T1&quot;, &quot;scale&quot;: &quot;Large&quot;, &quot;size&quot;: 28, &quot;dem&quot;: &quot;Very high&quot;, &quot;bi&quot;: &quot;Very high&quot;, &quot;signal&quot;: &quot;2.2m customers; critical digital banking journeys.&quot;}, {&quot;name&quot;: &quot;BNZ&quot;, &quot;region&quot;: &quot;ANZ&quot;, &quot;country&quot;: &quot;New Zealand&quot;, &quot;city&quot;: &quot;Auckland&quot;, &quot;lat&quot;: -36.8485, &quot;lon&quot;: 174.7633, &quot;tier&quot;: &quot;T1&quot;, &quot;scale&quot;: &quot;Large&quot;, &quot;size&quot;: 27, &quot;dem&quot;: &quot;Very high&quot;, &quot;bi&quot;: &quot;Very high&quot;, &quot;signal&quot;: &quot;1.2m customers; 85 apps; 2,500+ services.&quot;}, {&quot;name&quot;: &quot;RWWA&quot;, &quot;region&quot;: &quot;ANZ&quot;, &quot;country&quot;: &quot;Australia&quot;, &quot;city&quot;: &quot;Perth&quot;, &quot;lat&quot;: -31.9523, &quot;lon&quot;: 115.8613, &quot;tier&quot;: &quot;T1&quot;, &quot;scale&quot;: &quot;Medium&quot;, &quot;size&quot;: 23, &quot;dem&quot;: &quot;Very high&quot;, &quot;bi&quot;: &quot;High&quot;, &quot;signal&quot;: &quot;Real-time wagering and transaction-sensitive customer journeys.&quot;}, {&quot;name&quot;: &quot;Horizon Power&quot;, &quot;region&quot;: &quot;ANZ&quot;, &quot;country&quot;: &quot;Australia&quot;, &quot;city&quot;: &quot;Perth&quot;, &quot;lat&quot;: -31.63, &quot;lon&quot;: 116.15, &quot;tier&quot;: &quot;T2&quot;, &quot;scale&quot;: &quot;Medium&quot;, &quot;size&quot;: 20, &quot;dem&quot;: &quot;Medium&quot;, &quot;bi&quot;: &quot;Medium&quot;, &quot;signal&quot;: &quot;Strong service outcomes; less direct digital-commerce evidence.&quot;}, {&quot;name&quot;: &quot;IP Australia&quot;, &quot;region&quot;: &quot;ANZ&quot;, &quot;country&quot;: &quot;Australia&quot;, &quot;city&quot;: &quot;Canberra&quot;, &quot;lat&quot;: -35.2809, &quot;lon&quot;: 149.13, &quot;tier&quot;: &quot;T2&quot;, &quot;scale&quot;: &quot;Medium&quot;, &quot;size&quot;: 22, &quot;dem&quot;: &quot;High&quot;, &quot;bi&quot;: &quot;Medium&quot;, &quot;signal&quot;: &quot;~800k online transactions/year; 99% digital service delivery.&quot;}, {&quot;name&quot;: &quot;Shriram Capital&quot;, &quot;region&quot;: &quot;India&quot;, &quot;country&quot;: &quot;India&quot;, &quot;city&quot;: &quot;Chennai&quot;, &quot;lat&quot;: 13.0827, &quot;lon&quot;: 80.2707, &quot;tier&quot;: &quot;T1&quot;, &quot;scale&quot;: &quot;Large&quot;, &quot;size&quot;: 28, &quot;dem&quot;: &quot;High&quot;, &quot;bi&quot;: &quot;High&quot;, &quot;signal&quot;: &quot;Large regulated financial-services footprint.&quot;}, {&quot;name&quot;: &quot;Bajaj Allianz Life Insurance&quot;, &quot;region&quot;: &quot;India&quot;, &quot;country&quot;: &quot;India&quot;, &quot;city&quot;: &quot;Pune&quot;, &quot;lat&quot;: 18.5204, &quot;lon&quot;: 73.8567, &quot;tier&quot;: &quot;T1&quot;, &quot;scale&quot;: &quot;Large&quot;, &quot;size&quot;: 28, &quot;dem&quot;: &quot;High&quot;, &quot;bi&quot;: &quot;High&quot;, &quot;signal&quot;: &quot;High-volume regulated customer journeys.&quot;}, {&quot;name&quot;: &quot;Synapxe / IHiS&quot;, &quot;region&quot;: &quot;ASEAN + South Korea&quot;, &quot;country&quot;: &quot;Singapore&quot;, &quot;city&quot;: &quot;Singapore&quot;, &quot;lat&quot;: 1.3521, &quot;lon&quot;: 103.8198, &quot;tier&quot;: &quot;T1&quot;, &quot;scale&quot;: &quot;Large&quot;, &quot;size&quot;: 28, &quot;dem&quot;: &quot;High&quot;, &quot;bi&quot;: &quot;High&quot;, &quot;signal&quot;: &quot;570 backend apps; up to 80k vaccinations/day.&quot;}, {&quot;name&quot;: &quot;CIMB Bank&quot;, &quot;region&quot;: &quot;ASEAN + South Korea&quot;, &quot;country&quot;: &quot;Malaysia&quot;, &quot;city&quot;: &quot;Kuala Lumpur&quot;, &quot;lat&quot;: 3.139, &quot;lon&quot;: 101.6869, &quot;tier&quot;: &quot;T1&quot;, &quot;scale&quot;: &quot;Very large&quot;, &quot;size&quot;: 36, &quot;dem&quot;: &quot;Very high&quot;, &quot;bi&quot;: &quot;Very high&quot;, &quot;signal&quot;: &quot;30m+ customers; hundreds of millions of interactions.&quot;}, {&quot;name&quot;: &quot;KBTG / KBank&quot;, &quot;region&quot;: &quot;ASEAN + South Korea&quot;, &quot;country&quot;: &quot;Thailand&quot;, &quot;city&quot;: &quot;Bangkok&quot;, &quot;lat&quot;: 13.7563, &quot;lon&quot;: 100.5018, &quot;tier&quot;: &quot;T1&quot;, &quot;scale&quot;: &quot;Very large&quot;, &quot;size&quot;: 35, &quot;dem&quot;: &quot;Very high&quot;, &quot;bi&quot;: &quot;Very high&quot;, &quot;signal&quot;: &quot;23m+ customers; 400+ apps.&quot;}, {&quot;name&quot;: &quot;PayMaya&quot;, &quot;region&quot;: &quot;ASEAN + South Korea&quot;, &quot;country&quot;: &quot;Philippines&quot;, &quot;city&quot;: &quot;Manila&quot;, &quot;lat&quot;: 14.5995, &quot;lon&quot;: 120.9842, &quot;tier&quot;: &quot;T1&quot;, &quot;scale&quot;: &quot;Large&quot;, &quot;size&quot;: 29, &quot;dem&quot;: &quot;Very high&quot;, &quot;bi&quot;: &quot;High&quot;, &quot;signal&quot;: &quot;Digital wallet and mobile-payment journeys.&quot;}, {&quot;name&quot;: &quot;Mizuho Securities Asia&quot;, &quot;region&quot;: &quot;ASEAN + South Korea&quot;, &quot;country&quot;: &quot;South Korea&quot;, &quot;city&quot;: &quot;Seoul&quot;, &quot;lat&quot;: 37.5665, &quot;lon&quot;: 126.978, &quot;tier&quot;: &quot;T2&quot;, &quot;scale&quot;: &quot;Large&quot;, &quot;size&quot;: 26, &quot;dem&quot;: &quot;Medium&quot;, &quot;bi&quot;: &quot;Medium&quot;, &quot;signal&quot;: &quot;Regional securities account; Seoul presence.&quot;}, {&quot;name&quot;: &quot;Globeride&quot;, &quot;region&quot;: &quot;Japan&quot;, &quot;country&quot;: &quot;Japan&quot;, &quot;city&quot;: &quot;Tokyo&quot;, &quot;lat&quot;: 35.71, &quot;lon&quot;: 139.78, &quot;tier&quot;: &quot;T1&quot;, &quot;scale&quot;: &quot;Medium&quot;, &quot;size&quot;: 22, &quot;dem&quot;: &quot;Very high&quot;, &quot;bi&quot;: &quot;High&quot;, &quot;signal&quot;: &quot;Explicit RUM/UX health dashboards and e-commerce.&quot;}, {&quot;name&quot;: &quot;DeNA&quot;, &quot;region&quot;: &quot;Japan&quot;, &quot;country&quot;: &quot;Japan&quot;, &quot;city&quot;: &quot;Tokyo&quot;, &quot;lat&quot;: 35.66, &quot;lon&quot;: 139.7, &quot;tier&quot;: &quot;T1&quot;, &quot;scale&quot;: &quot;Large&quot;, &quot;size&quot;: 29, &quot;dem&quot;: &quot;Very high&quot;, &quot;bi&quot;: &quot;High&quot;, &quot;signal&quot;: &quot;Digital-native games, streaming, sports and healthcare portfolio.&quot;}, {&quot;name&quot;: &quot;Fujitsu&quot;, &quot;region&quot;: &quot;Japan&quot;, &quot;country&quot;: &quot;Japan&quot;, &quot;city&quot;: &quot;Kawasaki&quot;, &quot;lat&quot;: 35.5308, &quot;lon&quot;: 139.7029, &quot;tier&quot;: &quot;T3&quot;, &quot;scale&quot;: &quot;Very large&quot;, &quot;size&quot;: 36, &quot;dem&quot;: &quot;Medium&quot;, &quot;bi&quot;: &quot;Low–Medium&quot;, &quot;signal&quot;: &quot;Very large enterprise; public Dynatrace use is mainly internal operations.&quot;}, {&quot;name&quot;: &quot;DNP Group&quot;, &quot;region&quot;: &quot;Japan&quot;, &quot;country&quot;: &quot;Japan&quot;, &quot;city&quot;: &quot;Tokyo&quot;, &quot;lat&quot;: 35.69, &quot;lon&quot;: 139.76, &quot;tier&quot;: &quot;T3&quot;, &quot;scale&quot;: &quot;Very large&quot;, &quot;size&quot;: 34, &quot;dem&quot;: &quot;Medium&quot;, &quot;bi&quot;: &quot;Low–Medium&quot;, &quot;signal&quot;: &quot;Large diversified enterprise; current public story is operations-led.&quot;}];
+const APAC_RESOURCES=[{&quot;city&quot;: &quot;Sydney&quot;, &quot;lat&quot;: -33.8688, &quot;lon&quot;: 151.2093, &quot;n&quot;: 4, &quot;role&quot;: &quot;Manager + Sr Analyst + 2× Sr Support&quot;, &quot;leadership&quot;: true, &quot;region&quot;: &quot;ANZ&quot;}, {&quot;city&quot;: &quot;Melbourne&quot;, &quot;lat&quot;: -37.8136, &quot;lon&quot;: 144.9631, &quot;n&quot;: 1, &quot;role&quot;: &quot;Analyst&quot;, &quot;leadership&quot;: false, &quot;region&quot;: &quot;ANZ&quot;}, {&quot;city&quot;: &quot;Singapore&quot;, &quot;lat&quot;: 1.3521, &quot;lon&quot;: 103.8198, &quot;n&quot;: 3, &quot;role&quot;: &quot;2× Sr Analyst + Analyst; no local Manager&quot;, &quot;leadership&quot;: false, &quot;region&quot;: &quot;ASEAN + South Korea&quot;}, {&quot;city&quot;: &quot;Delhi&quot;, &quot;lat&quot;: 28.6139, &quot;lon&quot;: 77.209, &quot;n&quot;: 1, &quot;role&quot;: &quot;Lead Support&quot;, &quot;leadership&quot;: false, &quot;region&quot;: &quot;India&quot;}, {&quot;city&quot;: &quot;Mumbai&quot;, &quot;lat&quot;: 19.076, &quot;lon&quot;: 72.8777, &quot;n&quot;: 1, &quot;role&quot;: &quot;Sr Analyst&quot;, &quot;leadership&quot;: false, &quot;region&quot;: &quot;India&quot;}];
+
+
+function installResourceLabels(gd){
+  const layer=document.createElement(&#x27;div&#x27;);
+  layer.className=&#x27;resource-label-layer&#x27;;
+  const ns=&#x27;http://www.w3.org/2000/svg&#x27;;
+  const lines=document.createElementNS(ns,&#x27;svg&#x27;);
+  lines.classList.add(&#x27;resource-label-lines&#x27;);
+  lines.setAttribute(&#x27;aria-hidden&#x27;,&#x27;true&#x27;);
+  layer.appendChild(lines);
+  gd.appendChild(layer);
+  // Labels use projected geographic anchors rather than viewport percentages.
+  const items=APAC_RESOURCES.map(resource=&gt;{
+    const box=document.createElement(&#x27;div&#x27;);
+    box.className=&#x27;resource-label&#x27;;
+    const title=document.createElement(&#x27;strong&#x27;);
+    title.textContent=`${resource.city} · ${resource.n} resource${resource.n===1?&#x27;&#x27;:&#x27;s&#x27;}`;
+    const roles=document.createElement(&#x27;span&#x27;);roles.textContent=resource.role;
+    box.append(title,roles);layer.appendChild(box);
+    const line=document.createElementNS(ns,&#x27;path&#x27;);lines.appendChild(line);
+    return {resource,box,line};
+  });
+  function update(){
+    const bounds=gd.getBoundingClientRect();
+    const geo=gd._fullLayout?.geo?._subplot;
+    const projection=geo?.projection;
+    if(typeof projection!==&#x27;function&#x27;)return;
+    const labelLocations={Sydney:[160,-16],Melbourne:[103,-44],Singapore:[136,12],Delhi:[84,40],Mumbai:[75.5,-3]};
+    items.forEach(({resource,box,line})=&gt;{
+      const lon=resource.lon+(resource.city===&#x27;Singapore&#x27;?.42:0);
+      const lat=resource.lat+(resource.city===&#x27;Singapore&#x27;?.28:0);
+      const [x,y]=projection([lon,lat]);
+      const [anchorX,anchorY]=projection(labelLocations[resource.city]);
+      const visible=[x,y,anchorX,anchorY].every(Number.isFinite)&amp;&amp;x&gt;=0&amp;&amp;x&lt;=bounds.width&amp;&amp;y&gt;=0&amp;&amp;y&lt;=bounds.height;
+      box.hidden=!visible;line.style.display=visible?&#x27;&#x27;:&#x27;none&#x27;;
+      if(!visible)return;
+      const left=anchorX;
+      const top=anchorY;
+      box.style.left=left+&#x27;px&#x27;;box.style.top=top+&#x27;px&#x27;;
+      const right=left+box.offsetWidth,bottom=top+box.offsetHeight;
+      // Angled callout with a short horizontal shoulder, separated from the box.
+      const side=x&lt;(left+right)/2?-1:1;
+      const edge=side&lt;0?left:right;
+      const endX=edge+side*8;
+      const elbowX=endX+side*12;
+      const endY=top+Math.min(15,box.offsetHeight/3);
+      const route=resource.city===&#x27;Mumbai&#x27;
+        ? `M${x},${y} L${x},${endY} L${left},${endY}`
+        : `M${x},${y} L${elbowX},${endY} L${endX},${endY}`;
+      line.setAttribute(&#x27;d&#x27;,route);
+    });
+  }
+  let frame;
+  const schedule=()=&gt;{if(!frame)frame=requestAnimationFrame(()=&gt;{frame=null;update();});};
+  gd.on(&#x27;plotly_afterplot&#x27;,schedule);
+  gd.on(&#x27;plotly_relayout&#x27;,schedule);
+  gd.on(&#x27;plotly_relayouting&#x27;,schedule);
+  new ResizeObserver(schedule).observe(gd);
+  // Track Plotly&#x27;s live point transforms during drag, as well as completed relayouts.
+  const scatter=gd.querySelector(&#x27;.scatterlayer&#x27;);
+  if(scatter)new MutationObserver(schedule).observe(scatter.parentNode,{attributes:true,subtree:true,attributeFilter:[&#x27;transform&#x27;,&#x27;d&#x27;]});
+  let dragging=false;
+  function followDrag(){if(!dragging)return;update();requestAnimationFrame(followDrag);}
+  gd.addEventListener(&#x27;pointerdown&#x27;,()=&gt;{if(!dragging){dragging=true;followDrag();}});
+  window.addEventListener(&#x27;pointerup&#x27;,()=&gt;{dragging=false;schedule();});
+  window.addEventListener(&#x27;pointercancel&#x27;,()=&gt;{dragging=false;schedule();});
+  schedule();
+}
+
+function buildApjcMap(){
+  if(typeof Plotly===&#x27;undefined&#x27;) return;
+  const tierColours={T1:&#x27;#b6f23a&#x27;,T2:&#x27;#8f4dff&#x27;,T3:&#x27;#a6a1b3&#x27;};
+  const delivery=[...APAC_RESOURCES];
+  const singaporeHub=delivery.filter(x=&gt;x.city===&#x27;Singapore&#x27;);
+  const otherDelivery=delivery.filter(x=&gt;x.city!==&#x27;Singapore&#x27;);
+
+  // Draw most delivery hubs first so customer bubbles remain visible above them.
+  const traces=[{
+    type:&#x27;scattergeo&#x27;,
+    mode:&#x27;markers&#x27;,
+    name:&#x27;Delivery resources&#x27;,
+    lat:otherDelivery.map(x=&gt;x.lat),
+    lon:otherDelivery.map(x=&gt;x.lon),
+    text:otherDelivery.map(x=&gt;`&lt;b&gt;${x.city} resource hub&lt;/b&gt;&lt;br&gt;${x.region}&lt;br&gt;${x.n} resource${x.n===1?&#x27;&#x27;:&#x27;s&#x27;}&lt;br&gt;${x.role}`),
+    hovertemplate:&#x27;%{text}&lt;extra&gt;&lt;/extra&gt;&#x27;,
+    marker:{
+      symbol:&#x27;diamond&#x27;,
+      size:otherDelivery.map(x=&gt;14+x.n*4),
+      color:&#x27;#22c7e8&#x27;,
+      opacity:.78,
+      line:{width:0}
+    }
+  }];
+
+  // Bubble AREA is proportional to estimated accounts; largest diameter = 63.18 px.
+  const d=[...ESTIMATED_FOOTPRINT].sort((a,b)=&gt;b.estimate-a.estimate);
+  traces.push({type:&#x27;scattergeo&#x27;,mode:&#x27;markers&#x27;,name:&#x27;Estimated customer footprint&#x27;,
+    lat:d.map(x=&gt;x.lat),lon:d.map(x=&gt;x.lon),
+    text:d.map(x=&gt;`&lt;b&gt;${x.country}&lt;/b&gt;&lt;br&gt;Estimated accounts: ~${x.display}&lt;br&gt;Planning estimate · September 2026`),
+    hovertemplate:&#x27;%{text}&lt;extra&gt;&lt;/extra&gt;&#x27;,
+    marker:{size:d.map(x=&gt;63.18*Math.sqrt(x.estimate/120)),sizemode:&#x27;diameter&#x27;,
+      color:&#x27;#b6f23a&#x27;,opacity:.84,line:{width:0}}});
+
+  // Singapore is the ASEAN + South Korea resource base, so keep its hub marker in front.
+  traces.push({
+    type:&#x27;scattergeo&#x27;,
+    mode:&#x27;markers&#x27;,
+    name:&#x27;Singapore resource hub&#x27;,
+    // Slight visual offset keeps the hub distinct from the overlapping Synapxe customer bubble.
+    lat:singaporeHub.map(x=&gt;x.lat+0.28),
+    lon:singaporeHub.map(x=&gt;x.lon+0.42),
+    text:singaporeHub.map(x=&gt;`&lt;b&gt;${x.city} resource hub&lt;/b&gt;&lt;br&gt;${x.region}&lt;br&gt;${x.n} resources&lt;br&gt;${x.role}`),
+    hovertemplate:&#x27;%{text}&lt;extra&gt;&lt;/extra&gt;&#x27;,
+    marker:{
+      symbol:&#x27;diamond&#x27;,
+      size:singaporeHub.map(x=&gt;18+x.n*4),
+      color:&#x27;#22c7e8&#x27;,
+      opacity:1,
+      line:{width:0}
+    }
+  });
+
+  // Invisible projected points keep the callouts attached to open-water map positions.
+  const labelLocations={Sydney:[160,-16],Melbourne:[103,-44],Singapore:[136,12],Delhi:[84,40],Mumbai:[75.5,-3]};
+  traces.push({type:&#x27;scattergeo&#x27;,mode:&#x27;markers&#x27;,name:&#x27;Resource label anchors&#x27;,
+    lon:APAC_RESOURCES.map(r=&gt;labelLocations[r.city][0]),
+    lat:APAC_RESOURCES.map(r=&gt;labelLocations[r.city][1]),
+    marker:{size:1,color:&#x27;rgba(0,0,0,0)&#x27;},hoverinfo:&#x27;skip&#x27;,showlegend:false});
+
+  const layout={
+    margin:{l:0,r:0,t:0,b:0},
+    paper_bgcolor:&#x27;#eeeaf6&#x27;,
+    plot_bgcolor:&#x27;#eeeaf6&#x27;,
+    showlegend:false,
+    hoverlabel:{bgcolor:&#x27;#17112f&#x27;,font:{color:&#x27;#ffffff&#x27;,size:12}},
+    geo:{
+      scope:&#x27;world&#x27;,
+      projection:{type:&#x27;mercator&#x27;},
+      showframe:false,
+      showcoastlines:true,
+      coastlinecolor:&#x27;#bcb5d0&#x27;,
+      showland:true,
+      landcolor:&#x27;#eeeaf6&#x27;,
+      showocean:true,
+      oceancolor:&#x27;#fbfaff&#x27;,
+      showcountries:true,
+      countrycolor:&#x27;#d6d0e7&#x27;,
+      lonaxis:{range:[60,180]},
+      lataxis:{range:[-50,55]},
+      bgcolor:&#x27;#eeeaf6&#x27;
+    }
+  };
+  Plotly.newPlot(&#x27;apjcMap&#x27;,traces,layout,{responsive:true,displayModeBar:false,scrollZoom:true}).then(installResourceLabels);
+}
+buildApjcMap();
+const apjcMapEl=document.getElementById(&#x27;apjcMap&#x27;);
+if(apjcMapEl){
+  const APAC_LON=[60,180], APAC_LAT=[-50,55];
+  let clamping=false;
+
+  apjcMapEl.on(&#x27;plotly_relayout&#x27;,function(ev){
+    if(clamping) return;
+
+    // Plotly geo zoom/pan can update longitude/latitude ranges.
+    const lon0=ev[&#x27;geo.lonaxis.range[0]&#x27;];
+    const lon1=ev[&#x27;geo.lonaxis.range[1]&#x27;];
+    const lat0=ev[&#x27;geo.lataxis.range[0]&#x27;];
+    const lat1=ev[&#x27;geo.lataxis.range[1]&#x27;];
+
+    const update={};
+    let needsClamp=false;
+
+    if(lon0!==undefined &amp;&amp; lon1!==undefined){
+      // Allow narrower ranges (zoom in), but never wider than APAC.
+      const width=lon1-lon0;
+      const maxWidth=APAC_LON[1]-APAC_LON[0];
+      if(width&gt;maxWidth || lon0&lt;APAC_LON[0] || lon1&gt;APAC_LON[1]){
+        const clampedWidth=Math.min(width,maxWidth);
+        let centre=(lon0+lon1)/2;
+        centre=Math.max(APAC_LON[0]+clampedWidth/2,Math.min(APAC_LON[1]-clampedWidth/2,centre));
+        update[&#x27;geo.lonaxis.range&#x27;]=[centre-clampedWidth/2,centre+clampedWidth/2];
+        needsClamp=true;
+      }
+    }
+
+    if(lat0!==undefined &amp;&amp; lat1!==undefined){
+      const height=lat1-lat0;
+      const maxHeight=APAC_LAT[1]-APAC_LAT[0];
+      if(height&gt;maxHeight || lat0&lt;APAC_LAT[0] || lat1&gt;APAC_LAT[1]){
+        const clampedHeight=Math.min(height,maxHeight);
+        let centre=(lat0+lat1)/2;
+        centre=Math.max(APAC_LAT[0]+clampedHeight/2,Math.min(APAC_LAT[1]-clampedHeight/2,centre));
+        update[&#x27;geo.lataxis.range&#x27;]=[centre-clampedHeight/2,centre+clampedHeight/2];
+        needsClamp=true;
+      }
+    }
+
+    // Double-click/autosize can try to reset to a wider/global view.
+    if(ev[&#x27;geo.autorange&#x27;]===true || ev[&#x27;autosize&#x27;]===true){
+      update[&#x27;geo.lonaxis.range&#x27;]=APAC_LON;
+      update[&#x27;geo.lataxis.range&#x27;]=APAC_LAT;
+      needsClamp=true;
+    }
+
+    if(needsClamp){
+      clamping=true;
+      Plotly.relayout(apjcMapEl,update).finally(()=&gt;{clamping=false;});
+    }
+  });
+}
+
+&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
+
+
+"></iframe>
 </div>
 
 <div class="controls"><select id="rf"><option value="">All regions</option><option>ANZ</option><option>India</option><option>ASEAN + South Korea</option><option>Japan</option><option>UK</option></select>
@@ -957,6 +1340,7 @@ if(apjcMapEl){
 }
 
 </script></body></html>
+
 
 
 
